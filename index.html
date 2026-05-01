@@ -194,6 +194,69 @@
         object-fit: cover;
       }
 
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+        cursor: pointer;
+      }
+
+      .video-wrapper.is-playing .video-overlay {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .play-button-custom {
+        width: 80px;
+        height: 80px;
+        background: #4b1a9e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 20px rgba(75, 26, 158, 0.6);
+        animation: pulse-play 2s infinite;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .play-button-custom svg {
+        width: 40px;
+        height: 40px;
+        fill: #fff;
+        margin-left: 5px;
+      }
+
+      .play-button-custom:hover {
+        transform: scale(1.1);
+        background: #6d35d8;
+      }
+
+      .overlay-text {
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      }
+
+      @keyframes pulse-play {
+        0% { box-shadow: 0 0 0 0 rgba(109, 53, 216, 0.7); }
+        70% { box-shadow: 0 0 0 20px rgba(109, 53, 216, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(109, 53, 216, 0); }
+      }
+
 
       .reviews {
         display: flex;
@@ -1674,8 +1737,23 @@
       </p>
 
       <div class="video-container">
-        <div class="video-wrapper">
-          <video class="video-frame" src="./video/Jonas-video.mp4" controls></video>
+        <div class="video-wrapper" id="customVideoWrapper">
+          <video 
+            id="mainVideo"
+            class="video-frame" 
+            src="./video/Jonas-video.mp4" 
+            poster="./images/image.png"
+            playsinline 
+            webkit-playsinline
+          ></video>
+          <div class="video-overlay" id="videoOverlay">
+            <div class="play-button-custom">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <div class="overlay-text">CLIQUE PARA ASSISTIR</div>
+          </div>
         </div>
       </div>
 
@@ -2678,6 +2756,39 @@
       function toggleFaq(element) {
         element.classList.toggle("active");
       }
+
+      // Video Player Custom Overlay
+      document.addEventListener("DOMContentLoaded", function() {
+        const videoWrapper = document.getElementById('customVideoWrapper');
+        const video = document.getElementById('mainVideo');
+        
+        if (videoWrapper && video) {
+          videoWrapper.addEventListener('click', function(e) {
+            if (video.paused) {
+              video.play();
+            } else if (!video.hasAttribute("controls")) {
+              video.pause();
+            }
+          });
+
+          video.addEventListener('play', function() {
+            videoWrapper.classList.add('is-playing');
+            video.setAttribute("controls", "controls");
+          });
+
+          video.addEventListener('pause', function() {
+            videoWrapper.classList.remove('is-playing');
+            video.removeAttribute("controls");
+          });
+          
+          video.addEventListener('ended', function() {
+            videoWrapper.classList.remove('is-playing');
+            video.removeAttribute("controls");
+            video.currentTime = 0;
+            video.load(); 
+          });
+        }
+      });
     </script>
   </body>
 </html>
