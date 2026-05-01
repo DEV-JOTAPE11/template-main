@@ -2761,13 +2761,12 @@
       document.addEventListener("DOMContentLoaded", function() {
         const videoWrapper = document.getElementById('customVideoWrapper');
         const video = document.getElementById('mainVideo');
+        const videoOverlay = document.getElementById('videoOverlay');
         
-        if (videoWrapper && video) {
-          videoWrapper.addEventListener('click', function(e) {
+        if (videoWrapper && video && videoOverlay) {
+          videoOverlay.addEventListener('click', function(e) {
             if (video.paused) {
               video.play();
-            } else if (!video.hasAttribute("controls")) {
-              video.pause();
             }
           });
 
