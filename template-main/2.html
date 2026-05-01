@@ -1,0 +1,2699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Templates Rei dos Sites</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Unbounded:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function (c, s, q, u, a, r, e) {
+        c.hj =
+          c.hj ||
+          function () {
+            (c.hj.q = c.hj.q || []).push(arguments);
+          };
+        c._hjSettings = { hjid: a };
+        r = s.getElementsByTagName("head")[0];
+        e = s.createElement("script");
+        e.async = true;
+        e.src = q + c._hjSettings.hjid + u;
+        r.appendChild(e);
+      })(
+        window,
+        document,
+        "https://static.hj.contentsquare.net/c/csq-",
+        ".js",
+        6412886
+      );
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-17040961520"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-17040961520");
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", "Montserrat", "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #000;
+        color: #ffffff;
+        line-height: 1.6;
+      }
+
+      .top-banner {
+        background: linear-gradient(135deg, #25203f, #4b1a9e);
+        color: rgba(11, 12, 13, 1);
+        text-align: center;
+        padding: 12px 0;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+
+      .hero {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/KFSqcWn1fjvQY6E1uoNI1YSPTQ.jpg-n5RxV22xBef1m3zFnHq8zjAZWPkUHr.png");
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        position: relative;
+      }
+
+      .cta-button {
+        background: linear-gradient(88deg, #dce0e3 0%, #ebeced 100%);
+        color: #000000;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        margin: 30px 0;
+        transition: transform 0.3s ease;
+        box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.2);
+        text-align: center;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+      }
+
+      .arrow {
+        margin-left: 10px;
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 800px;
+        margin: 40px 0;
+      }
+
+      .divider-line-left {
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(
+          270deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .divider-line-right {
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .divider-text {
+        padding: 0 20px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #25203f, #4b1a9e);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+      }
+
+      .hero-title {
+        color: #fff;
+        text-align: center;
+        font-family: "Unbounded", cursive;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 57.2px;
+        letter-spacing: -1.32px;
+        max-width: 800px;
+        margin-bottom: 20px;
+      }
+
+      .hero-subtitle {
+        text-align: center;
+        font-size: 18px;
+        max-width: 600px;
+        margin-bottom: 40px;
+      }
+
+      .video-placeholder {
+        width: 100%;
+        max-width: 800px;
+        height: 400px;
+        background-color: #000000;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .reviews {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .avatar-group {
+        display: flex;
+        margin-right: 15px;
+      }
+      .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+        margin-left: -10px;
+        background-color: #dce0e3;
+      }
+
+      .avatar:first-child {
+        margin-left: 0;
+      }
+
+      .review-text {
+        font-size: 14px;
+      }
+
+      /* Carousel Styles */
+      .carousel-section {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 60px 0;
+        margin-top: 40px;
+      }
+
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Shadow overlays */
+      .carousel-container::before,
+      .carousel-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 40%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .carousel-container::before {
+        left: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0.9) 50%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .carousel-container::after {
+        right: 0;
+        background: linear-gradient(
+          270deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0.9) 50%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .carousel-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+      }
+
+      .carousel-item {
+        display: flex;
+        align-items: center;
+        margin: 0 60px;
+        white-space: nowrap;
+      }
+
+      .carousel-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 15px;
+        fill: none;
+        stroke: #4b1a9e;
+        stroke-width: 2;
+      }
+
+      .carousel-text {
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 500;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Sales Copy Section */
+      .sales-copy {
+        max-width: 800px;
+        margin: 80px auto;
+        padding: 0 20px;
+      }
+
+      .sales-copy-title {
+        color: #fff;
+        font-family: "Unbounded", cursive;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 36.4px;
+        letter-spacing: -0.84px;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+      }
+
+      .sales-copy p {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Inter", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 24px;
+      }
+
+      .sales-copy .highlight {
+        color: #4b1a9e;
+        font-weight: 500;
+      }
+
+      .sales-copy .emphasis {
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      /* Features Section */
+      .features-section {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wtip5nMAV4otyFAVURDhwh8zDuo.jpg-cYfCh9rwLVYEjcGJAMyNfHveWMmpcm.png");
+        background-size: cover;
+        background-position: center;
+        padding: 100px 20px;
+        position: relative;
+      }
+
+      .features-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .features-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .features-subtitle-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features-subtitle-line-left {
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(
+          270deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .features-subtitle-line-right {
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .features-subtitle {
+        color: #4b1a9e;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 0 20px;
+      }
+
+      .features-title {
+        color: #fff;
+        font-family: "Unbounded", cursive;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1.3;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+      }
+
+      .features-divider {
+        font-size: 30px;
+        color: #4b1a9e;
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .features-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .feature-card {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 30px;
+        width: 100%;
+        max-width: 350px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(75, 26, 158, 0.2);
+      }
+
+      .feature-icon {
+        color: #4b1a9e;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .feature-title {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .feature-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      /* Template Examples Section - Redesigned */
+      .templates-section {
+        max-width: 1200px;
+        margin: 100px auto;
+        padding: 0 20px;
+      }
+
+      .templates-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .templates-subtitle-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .templates-subtitle-line-left {
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(
+          270deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .templates-subtitle-line-right {
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .templates-subtitle {
+        color: #4b1a9e;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 0 20px;
+      }
+
+      .templates-title {
+        color: #fff;
+        font-family: "Unbounded", cursive;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1.3;
+        letter-spacing: -1px;
+        margin-bottom: 40px;
+      }
+
+      .templates-showcase {
+        position: relative;
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+
+      .templates-slider {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        height: 560px;
+      }
+
+      .templates-slides {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        height: 100%;
+      }
+
+      .template-slide {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .template-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.5s ease;
+      }
+
+      .template-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0)
+        );
+        transform: translateY(100px);
+        transition: transform 0.5s ease;
+      }
+
+      .template-slide:hover .template-content {
+        transform: translateY(0);
+      }
+
+      .template-slide:hover .template-image {
+        transform: scale(1.05);
+      }
+
+      .template-title {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .template-description {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 16px;
+        margin-bottom: 20px;
+        max-width: 80%;
+      }
+
+      .template-button {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #25203f, #4b1a9e);
+        color: #000000;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .template-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(75, 26, 158, 0.3);
+      }
+
+      .template-button-icon {
+        margin-left: 8px;
+      }
+
+      .templates-navigation {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      .templates-arrow {
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        pointer-events: auto;
+        margin: 0 20px;
+      }
+
+      .templates-arrow:hover {
+        background: #4b1a9e;
+        transform: scale(1.1);
+      }
+
+      .templates-arrow svg {
+        width: 24px;
+        height: 24px;
+        stroke: #fff;
+        stroke-width: 2;
+      }
+
+      .templates-pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 10px;
+      }
+
+      .templates-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .templates-dot.active {
+        background: #4b1a9e;
+        transform: scale(1.2);
+      }
+
+      .templates-dot:hover {
+        background: rgba(75, 26, 158, 0.7);
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonials-header {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .testimonials-title-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .testimonials-line {
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(
+          270deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .testimonials-title {
+        color: #4b1a9e;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 0 30px;
+      }
+
+      .testimonials-slider-container {
+        position: relative;
+        padding: 40px 0;
+      }
+
+      .testimonials-slider-container::before,
+      .testimonials-slider-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 20%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .testimonials-slider-container::before {
+        left: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(1, 1, 1, 1) 0%,
+          rgba(1, 1, 1, 0.8) 50%,
+          rgba(1, 1, 1, 0) 100%
+        );
+      }
+
+      .testimonials-slider-container::after {
+        right: 0;
+        background: linear-gradient(
+          270deg,
+          rgba(11, 12, 13, 1) 0%,
+          rgba(11, 12, 13, 0.8) 50%,
+          rgba(11, 12, 13, 0) 100%
+        );
+      }
+
+      .testimonials-slider {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+
+      .testimonials-track {
+        display: flex;
+        animation: testimonialScroll 40s linear infinite;
+        width: fit-content;
+      }
+
+      .testimonials-track-reverse {
+        display: flex;
+        animation: testimonialScrollReverse 40s linear infinite;
+        width: fit-content;
+      }
+
+      @keyframes testimonialScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(
+            calc(-350px * 6 - 30px * 6)
+          ); /* Width of cards × number of cards */
+        }
+      }
+
+      @keyframes testimonialScrollReverse {
+        0% {
+          transform: translateX(
+            calc(-350px * 6 - 30px * 6)
+          ); /* Width of cards × number of cards */
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .testimonial-card {
+        flex: 0 0 auto;
+        width: 350px;
+        background-color: #101112;
+        border-radius: 10px;
+        padding: 30px;
+        margin: 0 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .testimonial-stars {
+        display: flex;
+        margin-bottom: 15px;
+      }
+
+      .testimonial-star {
+        color: #4b1a9e;
+        margin-right: 5px;
+      }
+
+      .testimonial-quote {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        min-height: 80px;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .testimonial-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .testimonial-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-info {
+        flex: 1;
+      }
+
+      .testimonial-name {
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 3px;
+      }
+
+      .testimonial-position {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+      }
+
+      /* Pricing Section */
+      .pricing-section {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/JFR1yI0kV70Lnj3WdxzQ9oo8Pk.jpg-XaPEcjfopJKrcfIlLyAgxgiR0KOOsL.png");
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+        position: relative;
+      }
+
+      .pricing-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .pricing-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .pricing-subtitle {
+        color: #4b1a9e;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: inline-block;
+        position: relative;
+      }
+
+      .pricing-subtitle::before,
+      .pricing-subtitle::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 50px;
+        height: 1px;
+        background: linear-gradient(
+          270deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .pricing-subtitle::before {
+        right: 100%;
+        margin-right: 15px;
+      }
+
+      .pricing-subtitle::after {
+        left: 100%;
+        margin-left: 15px;
+        background: linear-gradient(
+          90deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .pricing-title {
+        color: #fff;
+        font-family: "Unbounded", cursive;
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 1.3;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+      }
+
+      .pricing-description {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto 40px;
+      }
+
+      .pricing-card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .pricing-card {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 50px 40px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(135deg, #25203f, #4b1a9e);
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(75, 26, 158, 0.3);
+      }
+
+      .pricing-card-header {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .pricing-card-title {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .pricing-card-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .pricing-card-price {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .price-value {
+        font-family: "Unbounded", cursive;
+        font-size: 64px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #25203f, #4b1a9e);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+      }
+
+      .price-currency {
+        font-size: 24px;
+        vertical-align: super;
+      }
+
+      .price-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+
+      .pricing-card-features {
+        margin-bottom: 40px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .feature-icon {
+        color: #4b1a9e;
+        margin-right: 15px;
+        flex-shrink: 0;
+        margin-top: 5px;
+      }
+
+      .feature-text {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .pricing-card-button {
+        text-align: center;
+      }
+
+      .pricing-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #25203f, #4b1a9e);
+        color: #000000;
+        padding: 16px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 18px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+      }
+
+      .pricing-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(75, 26, 158, 0.4);
+      }
+
+      .pricing-button-icon {
+        margin-left: 10px;
+      }
+
+      .pricing-reviews {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .pricing-avatar-group {
+        display: flex;
+        margin-right: 15px;
+      }
+
+      .pricing-avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+        margin-left: -10px;
+        background-color: #dce0e3;
+        overflow: hidden;
+      }
+
+      .pricing-avatar:first-child {
+        margin-left: 0;
+      }
+
+      .pricing-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .pricing-review-text {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        padding: 100px 0;
+        background-color: #0b0c0d;
+        position: relative;
+      }
+
+      .faq-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .faq-header {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .faq-title-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .faq-line {
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(
+          270deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+        max-width: 200px;
+      }
+
+      .faq-line-right {
+        background: linear-gradient(
+          90deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .faq-title {
+        color: #4b1a9e;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 0 30px;
+      }
+
+      .faq-description {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .faq-item {
+        background-color: #101112;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question {
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .faq-question-text {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .faq-icon {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-icon::before,
+      .faq-icon::after {
+        content: "";
+        position: absolute;
+        background-color: #4b1a9e;
+        transition: all 0.3s ease;
+      }
+
+      .faq-icon::before {
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      .faq-icon::after {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      .faq-answer-content {
+        padding: 0 30px 25px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .faq-item.active {
+        box-shadow: 0 10px 30px rgba(75, 26, 158, 0.2);
+      }
+
+      .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1200px) {
+        .templates-slider {
+          height: 500px;
+        }
+
+        .pricing-card {
+          max-width: 450px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero-title {
+          font-size: 36px;
+          line-height: 1.3;
+        }
+
+        .video-placeholder {
+          height: 350px;
+        }
+
+        .features-grid {
+          gap: 20px;
+        }
+
+        .templates-slider {
+          height: 450px;
+        }
+
+        .template-content {
+          padding: 20px;
+        }
+
+        .template-description {
+          max-width: 100%;
+        }
+
+        .pricing-title {
+          font-size: 36px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .top-banner {
+          font-size: 14px;
+          padding: 10px 0;
+        }
+
+        .hero {
+          padding: 30px 15px;
+        }
+
+        .hero-title {
+          font-size: 28px;
+          line-height: 1.3;
+          letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+          font-size: 16px;
+        }
+
+        .cta-button {
+          padding: 12px 20px;
+          font-size: 14px;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .divider-text {
+          font-size: 12px;
+          padding: 0 10px;
+        }
+
+        .video-placeholder {
+          height: 250px;
+        }
+
+        .sales-copy-title {
+          font-size: 24px;
+          line-height: 1.3;
+        }
+
+        .sales-copy p {
+          font-size: 16px;
+        }
+
+        .features-section,
+        .testimonials-section,
+        .pricing-section,
+        .faq-section {
+          padding: 60px 0;
+        }
+
+        .features-title,
+        .templates-title,
+        .pricing-title {
+          font-size: 28px;
+        }
+
+        .features-subtitle,
+        .templates-subtitle,
+        .testimonials-title {
+          font-size: 12px;
+        }
+
+        .feature-card {
+          padding: 20px;
+        }
+
+        .templates-slider {
+          height: 400px;
+        }
+
+        .templates-arrow {
+          width: 40px;
+          height: 40px;
+          margin: 0 10px;
+        }
+
+        .testimonial-card {
+          width: 280px;
+          padding: 20px;
+        }
+
+        .testimonial-quote {
+          font-size: 14px;
+          min-height: 100px;
+        }
+
+        .pricing-card {
+          padding: 30px 20px;
+        }
+
+        .price-value {
+          font-size: 48px;
+        }
+
+        .price-currency {
+          font-size: 20px;
+        }
+
+        .pricing-button {
+          padding: 14px 20px;
+          font-size: 16px;
+        }
+
+        .faq-title {
+          font-size: 20px;
+          padding: 0 15px;
+        }
+
+        .faq-description {
+          font-size: 16px;
+        }
+
+        .faq-question {
+          padding: 20px;
+        }
+
+        .faq-question-text {
+          font-size: 16px;
+          max-width: 85%;
+        }
+
+        .faq-answer-content {
+          padding: 0 20px 20px;
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-title {
+          font-size: 24px;
+          line-height: 1.3;
+        }
+
+        .hero-subtitle {
+          font-size: 14px;
+        }
+
+        .video-placeholder {
+          height: 200px;
+        }
+
+        .carousel-item {
+          margin: 0 30px;
+        }
+
+        .carousel-text {
+          font-size: 14px;
+        }
+
+        .templates-slider {
+          height: 350px;
+        }
+
+        .template-title {
+          font-size: 20px;
+        }
+
+        .template-description {
+          font-size: 14px;
+          margin-bottom: 15px;
+        }
+
+        .template-button {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        .testimonial-card {
+          width: 250px;
+          padding: 15px;
+        }
+
+        .testimonial-quote {
+          min-height: 120px;
+        }
+
+        .testimonial-avatar {
+          width: 40px;
+          height: 40px;
+        }
+
+        .price-value {
+          font-size: 42px;
+        }
+
+        .feature-item {
+          margin-bottom: 15px;
+        }
+
+        .feature-text {
+          font-size: 14px;
+        }
+
+        .pricing-reviews {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .pricing-avatar-group {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-banner">
+      EM WORDPRESS, HTML, CSS, JAVASCRIPT, SHOPIFY E MUITO MAIS...
+    </div>
+
+    <div class="hero">
+      <a
+        href="https://pay.kirvano.com/3e0d2460-a663-486b-adfa-27a1d8413217"
+        class="cta-button"
+      >
+        Quero meus templates por menos de 1R$ cada
+        <span class="arrow">→</span>
+      </a>
+
+      <div class="divider">
+        <div class="divider-line-left"></div>
+        <div class="divider-text">A FORMULA PARA GANHAR TEMPO</div>
+        <div class="divider-line-right"></div>
+      </div>
+
+      <h1 class="hero-title">
+        MAIS DE 100 TEMPLATES<br />POR MENOS DE R$49,90
+      </h1>
+
+      <p class="hero-subtitle">
+        Vou te disponibilizar todos os sites que minha empresa já criou<br />
+        por um preço ridículo
+      </p>
+
+      <div class="video-placeholder">
+        <div
+          id="vid_67e0833b22fea58712cf356e"
+          style="position: relative; width: 100%; padding: 56.25% 0 0"
+        >
+          <img
+            id="thumb_67e0833b22fea58712cf356e"
+            src="https://images.converteai.net/4b7dcf06-4129-47b4-a172-e3169474979f/players/67e0833b22fea58712cf356e/thumbnail.jpg"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              display: block;
+            "
+            alt="thumbnail"
+          />
+          <div
+            id="backdrop_67e0833b22fea58712cf356e"
+            style="
+              -webkit-backdrop-filter: blur(5px);
+              backdrop-filter: blur(5px);
+              position: absolute;
+              top: 0;
+              height: 100%;
+              width: 100%;
+            "
+          ></div>
+        </div>
+        <script type="text/javascript" id="scr_67e0833b22fea58712cf356e">
+          var s = document.createElement("script");
+          (s.src =
+            "https://scripts.converteai.net/4b7dcf06-4129-47b4-a172-e3169474979f/players/67e0833b22fea58712cf356e/player.js"),
+            (s.async = !0),
+            document.head.appendChild(s);
+        </script>
+      </div>
+
+      <a
+        href="https://pay.kirvano.com/3e0d2460-a663-486b-adfa-27a1d8413217"
+        class="cta-button"
+      >
+        Quero meus templates por menos de 1R$ cada
+        <span class="arrow">→</span>
+      </a>
+
+      <div class="reviews">
+        <div class="avatar-group">
+          <img class="avatar" src="./images/people/1.png" />
+          <img class="avatar" src="./images/people/2.png" />
+          <img class="avatar" src="./images/people/3.png" />
+        </div>
+        <div class="review-text">1,200 reviews (4.8/5)</div>
+      </div>
+    </div>
+
+    <!-- Infinite Carousel Section -->
+    <div class="carousel-section">
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <!-- First set of items -->
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2L4 7V17L12 22L20 17V7L12 2Z"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+            <span class="carousel-text">Design Responsivo</span>
+          </div>
+
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M12 16V12M12 8H12.01"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="carousel-text">Suporte Técnico</span>
+          </div>
+
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="2"
+                y="4"
+                width="20"
+                height="16"
+                rx="2"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M2 10H22"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="carousel-text">Pagamento Seguro</span>
+          </div>
+
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M12 8V12L15 15"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="carousel-text">Atualizações Gratuitas</span>
+          </div>
+
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2V18M12 18L6 12M12 18L18 12"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <path
+                d="M5 21H19"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="carousel-text">Download Imediato</span>
+          </div>
+
+          <!-- Duplicate items for infinite scroll effect -->
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2L4 7V17L12 22L20 17V7L12 2Z"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+            <span class="carousel-text">Design Responsivo</span>
+          </div>
+
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M12 16V12M12 8H12.01"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="carousel-text">Suporte Técnico</span>
+          </div>
+
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="2"
+                y="4"
+                width="20"
+                height="16"
+                rx="2"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M2 10H22"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="carousel-text">Pagamento Seguro</span>
+          </div>
+
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M12 8V12L15 15"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="carousel-text">Atualizações Gratuitas</span>
+          </div>
+
+          <div class="carousel-item">
+            <svg
+              class="carousel-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2V18M12 18L6 12M12 18L18 12"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <path
+                d="M5 21H19"
+                stroke="#4b1a9e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="carousel-text">Download Imediato</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sales Copy Section -->
+    <div class="sales-copy">
+      <h2 class="sales-copy-title">
+        Templates que transformam ideias em realidade
+      </h2>
+
+      <p>
+        Você já passou horas tentando criar um site do zero, lutando com
+        códigos, designs e funcionalidades que simplesmente não cooperam? Seu
+        tempo é valioso demais para ser desperdiçado assim.
+      </p>
+
+      <p>
+        Durante anos, empreendedores e profissionais como você ficaram presos
+        entre duas opções:
+        <span class="highlight">gastar fortunas com agências</span> ou
+        <span class="highlight"
+          >passar semanas aprendendo a desenvolver sites</span
+        >. Ambas as opções consumindo seu recurso mais precioso: tempo.
+      </p>
+
+      <p>Agora, as possibilidades evoluíram.</p>
+
+      <p>
+        Suas ideias podem ganhar vida
+        <span class="emphasis">em questão de horas, não semanas</span>. Com
+        templates profissionais, você elimina a curva de aprendizado e os altos
+        custos de desenvolvimento. No entanto, muitos ainda se perdem em um mar
+        de opções sem qualidade ou suporte adequado.
+      </p>
+
+      <p>Por muito tempo, esse conhecimento estava fragmentado.</p>
+
+      <p>
+        Pessoas tentavam juntar peças de diferentes fontes, resultando em sites
+        inconsistentes e frustrações constantes. Não havia uma solução completa
+        e confiável que oferecesse qualidade e variedade a um preço justo.
+      </p>
+
+      <p>Até agora.</p>
+
+      <p>
+        Apresentamos nossa biblioteca com
+        <span class="highlight">mais de 100 templates premium</span>,
+        cuidadosamente desenvolvidos por nossa equipe de especialistas, testados
+        em situações reais e otimizados para resultados.
+      </p>
+
+      <p>
+        Esta coleção completa fornece tudo que você precisa para lançar qualquer
+        tipo de projeto online, dando a você a liberdade de focar no que
+        realmente importa:
+        <span class="emphasis">seu negócio e seus clientes</span>.
+      </p>
+
+      <p>
+        E o melhor? Você não precisa escolher apenas um. Por menos de R$49,90,
+        você tem acesso a <span class="highlight">toda a biblioteca</span> - o
+        equivalente a menos de R$1 por template.
+      </p>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+      <div class="features-container">
+        <div class="features-header">
+          <div class="features-subtitle-wrapper">
+            <div class="features-subtitle-line-left"></div>
+            <span class="features-subtitle">PASSO A PASSO</span>
+            <div class="features-subtitle-line-right"></div>
+          </div>
+          <h2 class="features-title">Por que escolher nossos Templates?</h2>
+          <div class="features-divider">*</div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L2 7L12 12L22 7L12 2Z"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2 17L12 22L22 17"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2 12L12 17L22 12"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">Templates Profissionais</h3>
+            <p class="feature-description">
+              Desenvolvidos por especialistas com anos de experiência em design
+              e desenvolvimento web, garantindo qualidade e performance em todos
+              os dispositivos.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14 2V8H20"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 13H8"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 17H8"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10 9H9H8"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">Recursos Completos</h3>
+            <p class="feature-description">
+              Acesse uma ampla variedade de recursos e ferramentas especialmente
+              projetados para personalizar e adaptar os templates às suas
+              necessidades específicas.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 6V12L16 14"
+                  stroke="#4b1a9e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">Implementação Rápida</h3>
+            <p class="feature-description">
+              Economize tempo com templates prontos para uso que podem ser
+              implementados em minutos, permitindo que você lance seu projeto
+              online rapidamente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Template Examples Section - Redesigned -->
+    <div class="templates-section">
+      <div class="templates-header">
+        <div class="templates-subtitle-wrapper">
+          <div class="templates-subtitle-line-left"></div>
+          <span class="templates-subtitle">EXEMPLOS DE TEMPLATES</span>
+          <div class="templates-subtitle-line-right"></div>
+        </div>
+        <h2 class="templates-title">Conheça alguns dos nossos templates</h2>
+      </div>
+
+      <div class="templates-showcase">
+        <div class="templates-slider">
+          <div class="templates-slides">
+            <!-- Template 1 - LW Tecnologia -->
+            <div class="template-slide">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-18%20at%2012.40.34-EvzsvoS04x8PlxfVD1ypmXHqQRjs2p.png"
+                alt="LW Tecnologia"
+                class="template-image"
+              />
+              <div class="template-content">
+                <h3 class="template-title">Template Corporativo</h3>
+                <p class="template-description">
+                  Design profissional para empresas de tecnologia com layout
+                  moderno e funcional.
+                </p>
+                <a
+                  href="https://www.lwtecnologia.com.br/"
+                  target="_blank"
+                  class="template-button"
+                >
+                  Visitar site
+                  <svg
+                    class="template-button-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19M19 12L12 5M19 12L12 19"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Template 2 - Herbert Carnauba -->
+            <div class="template-slide">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-18%20at%2012.41.18-TU3rDZ7gbnuXdA26rtY2hPMNLhE1k8.png"
+                alt="Herbert Carnauba"
+                class="template-image"
+              />
+              <div class="template-content">
+                <h3 class="template-title">Template para Cursos</h3>
+                <p class="template-description">
+                  Solução completa para venda de cursos e infoprodutos com
+                  design de alta conversão.
+                </p>
+                <a
+                  href="https://pay.kirvano.com/3e0d2460-a663-486b-adfa-27a1d8413217"
+                  target="_blank"
+                  class="template-button"
+                >
+                  Visitar site
+                  <svg
+                    class="template-button-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19M19 12L12 5M19 12L12 19"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="template-slide">
+              <img
+                src="./images/template/1.png"
+                alt="Ketty Satto"
+                class="template-image"
+              />
+              <div class="template-content">
+                <h3 class="template-title">Landing Page Completa</h3>
+                <p class="template-description">
+                  Landing Page completa para venda de produtos e serviços com
+                  design de alta conversão.
+                </p>
+                <a
+                  href="https://ketty-normal-git-main-solid-solucoes-digitais.vercel.app/"
+                  target="_blank"
+                  class="template-button"
+                >
+                  Visitar site
+                  <svg
+                    class="template-button-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19M19 12L12 5M19 12L12 19"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="template-slide">
+              <img
+                src="./images/template/2.png"
+                alt="Ketty Satto"
+                class="template-image"
+              />
+              <div class="template-content">
+                <h3 class="template-title">Landing Page Completa</h3>
+                <p class="template-description">
+                  Landing Page completa para venda de produtos e serviços com
+                  design de alta conversão.
+                </p>
+                <a
+                  href="https://black-november-borges.vercel.app/"
+                  target="_blank"
+                  class="template-button"
+                >
+                  Visitar site
+                  <svg
+                    class="template-button-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19M19 12L12 5M19 12L12 19"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Template 3 - Maryane -->
+            <div class="template-slide">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-18%20at%2012.42.41.png-J5HnleM2ceWoMQBJGi3E48pHAyBwMy.jpeg"
+                alt="Maryane"
+                class="template-image"
+              />
+              <div class="template-content">
+                <h3 class="template-title">Template Profissional</h3>
+                <p class="template-description">
+                  Design elegante e sofisticado para profissionais liberais e
+                  consultores.
+                </p>
+                <a
+                  href="https://pay.kirvano.com/3e0d2460-a663-486b-adfa-27a1d8413217"
+                  target="_blank"
+                  class="template-button"
+                >
+                  Visitar site
+                  <svg
+                    class="template-button-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19M19 12L12 5M19 12L12 19"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="templates-navigation">
+          <div class="templates-arrow templates-prev" onclick="changeSlide(-1)">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="templates-arrow templates-next" onclick="changeSlide(1)">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 18L15 12L9 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="templates-pagination">
+          <div class="templates-dot active" onclick="goToSlide(0)"></div>
+          <div class="templates-dot" onclick="goToSlide(1)"></div>
+          <div class="templates-dot" onclick="goToSlide(2)"></div>
+          <div class="templates-dot" onclick="goToSlide(3)"></div>
+          <div class="templates-dot" onclick="goToSlide(4)"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="pricing-section">
+      <div class="pricing-container">
+        <div class="pricing-header">
+          <span class="pricing-subtitle">OFERTA EXCLUSIVA</span>
+          <h2 class="pricing-title">Invista em seu sucesso online</h2>
+          <p class="pricing-description">
+            Economize tempo e dinheiro com nossa biblioteca completa de
+            templates premium por um preço único e imbatível
+          </p>
+        </div>
+
+        <div class="pricing-card-container">
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-title">Pacote Completo</h3>
+              <p class="pricing-card-subtitle">
+                Mais de 100 templates profissionais por um preço inacreditável
+              </p>
+            </div>
+
+            <div class="pricing-card-price">
+              <div class="price-value">
+                <span class="price-currency">R$</span>49,90
+              </div>
+              <p class="price-description">
+                Pagamento único - Sem mensalidades
+              </p>
+            </div>
+
+            <div class="pricing-card-features">
+              <div class="feature-item">
+                <svg
+                  class="feature-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 6L9 17L4 12"
+                    stroke="#4b1a9e"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="feature-text">
+                  Acesso imediato a mais de 100 templates premium
+                </p>
+              </div>
+
+              <div class="feature-item">
+                <svg
+                  class="feature-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 6L9 17L4 12"
+                    stroke="#4b1a9e"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="feature-text">
+                  Compatível com WordPress, HTML, CSS, JavaScript e Shopify
+                </p>
+              </div>
+
+              <div class="feature-item">
+                <svg
+                  class="feature-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 6L9 17L4 12"
+                    stroke="#4b1a9e"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="feature-text">
+                  Suporte técnico especializado para implementação
+                </p>
+              </div>
+
+              <div class="feature-item">
+                <svg
+                  class="feature-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 6L9 17L4 12"
+                    stroke="#4b1a9e"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="feature-text">
+                  Atualizações gratuitas para todos os templates
+                </p>
+              </div>
+
+              <div class="feature-item">
+                <svg
+                  class="feature-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 6L9 17L4 12"
+                    stroke="#4b1a9e"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="feature-text">
+                  Licença para uso em projetos pessoais e comerciais
+                </p>
+              </div>
+            </div>
+
+            <div class="pricing-card-button">
+              <a
+                href="https://pay.kirvano.com/3e0d2460-a663-486b-adfa-27a1d8413217"
+                class="pricing-button"
+              >
+                Garantir meus templates agora
+                <svg
+                  class="pricing-button-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-reviews">
+          <div class="pricing-avatar-group">
+            <div class="pricing-avatar">
+              <img src="./images/people/1.png" alt="Avatar 1" />
+            </div>
+            <div class="pricing-avatar">
+              <img src="./images/people/2.png" alt="Avatar 2" />
+            </div>
+            <div class="pricing-avatar">
+              <img src="./images/people/3.png" alt="Avatar 3" />
+            </div>
+          </div>
+          <div class="pricing-review-text">
+            1,200 clientes satisfeitos (4.8/5)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <div class="faq-container">
+        <div class="faq-header">
+          <div class="faq-title-wrapper">
+            <div class="faq-line"></div>
+            <h2 class="faq-title">FAQ</h2>
+            <div class="faq-line faq-line-right"></div>
+          </div>
+          <p class="faq-description">
+            Respostas para as perguntas mais frequentes sobre nossos templates
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+              <h3 class="faq-question-text">
+                Como posso personalizar os templates?
+              </h3>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                Todos os nossos templates são facilmente personalizáveis. Você
+                receberá arquivos bem organizados e documentados, permitindo que
+                você altere cores, fontes, imagens e conteúdo sem dificuldade.
+                Para WordPress, usamos o Elementor ou Gutenberg, que oferecem
+                interfaces intuitivas de arrastar e soltar. Para HTML/CSS, os
+                arquivos são estruturados de forma clara para facilitar edições.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+              <h3 class="faq-question-text">Os templates são responsivos?</h3>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                Sim, absolutamente! Todos os nossos templates são 100%
+                responsivos e testados em diversos dispositivos e tamanhos de
+                tela. Eles se adaptam perfeitamente a smartphones, tablets,
+                laptops e desktops, garantindo que seu site tenha uma aparência
+                profissional em qualquer dispositivo que seus visitantes
+                utilizem.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+              <h3 class="faq-question-text">
+                Preciso de conhecimento técnico para usar os templates?
+              </h3>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                Não é necessário conhecimento técnico avançado. Nossos templates
+                são projetados para serem intuitivos e fáceis de usar.
+                Fornecemos documentação detalhada com instruções passo a passo
+                para instalação e personalização. Para alterações mais
+                complexas, oferecemos suporte técnico para ajudá-lo a
+                implementar as modificações desejadas.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+              <h3 class="faq-question-text">
+                Posso usar os templates em múltiplos projetos?
+              </h3>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                Sim! Ao adquirir nosso pacote, você recebe uma licença que
+                permite usar os templates em quantos projetos desejar, sejam
+                eles pessoais ou comerciais. Você pode criar sites para seus
+                clientes, para sua própria empresa ou para projetos pessoais sem
+                limitações ou custos adicionais.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+              <h3 class="faq-question-text">
+                Quanto tempo leva para implementar um template?
+              </h3>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                A implementação básica de um template pode ser feita em questão
+                de horas. Para um site completo com personalização de conteúdo,
+                imagens e ajustes específicos, o processo geralmente leva de 1 a
+                3 dias, dependendo da complexidade do projeto. Isso representa
+                uma economia significativa de tempo em comparação com o
+                desenvolvimento de um site do zero, que pode levar semanas ou
+                meses.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adicione este script antes do fechamento do body -->
+    <script>
+      // Função para obter parâmetros da URL atual
+      function getURLParameters() {
+        const params = {};
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        for (const [key, value] of urlParams.entries()) {
+          params[key] = value;
+        }
+
+        return params;
+      }
+
+      // Função para adicionar parâmetros a uma URL
+      function appendParamsToURL(url, params) {
+        if (Object.keys(params).length === 0) {
+          return url;
+        }
+
+        const urlObj = new URL(url);
+        const urlParams = new URLSearchParams(urlObj.search);
+
+        for (const key in params) {
+          urlParams.set(key, params[key]);
+        }
+
+        urlObj.search = urlParams.toString();
+        return urlObj.toString();
+      }
+
+      // Atualizar todos os links com parâmetros da URL
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = getURLParameters();
+        const baseKiwifyURL =
+          "https://pay.kirvano.com/3e0d2460-a663-486b-adfa-27a1d8413217";
+
+        // Selecionar todos os links que apontam para a página de pagamento
+        const paymentLinks = document.querySelectorAll(
+          'a[href^="https://pay.kirvano.com/3e0d2460-a663-486b-adfa-27a1d8413217"]'
+        );
+
+        // Atualizar cada link com os parâmetros
+        paymentLinks.forEach((link) => {
+          link.href = appendParamsToURL(baseKiwifyURL, urlParams);
+        });
+
+        // Garantir que todos os links "#" também redirecionem para o link de pagamento com os parâmetros
+        document.querySelectorAll('a[href="#"]').forEach(function (link) {
+          link.setAttribute(
+            "href",
+            appendParamsToURL(baseKiwifyURL, urlParams)
+          );
+        });
+
+        // Atualizar os handlers de clique para botões que podem não ser links <a>
+        document
+          .querySelectorAll(".templates-arrow, .templates-dot")
+          .forEach((element) => {
+            const originalOnClick = element.getAttribute("onclick");
+            if (originalOnClick) {
+              // Manter a funcionalidade original
+              // Não alteramos esses elementos já que são para navegação interna
+            }
+          });
+      });
+
+      // Funções existentes para o carrossel
+      let currentSlide = 0;
+      const totalSlides = document.querySelectorAll(".template-slide").length;
+
+      function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        updateSlider();
+      }
+
+      function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateSlider();
+      }
+
+      function updateSlider() {
+        const slides = document.querySelector(".templates-slides");
+        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        // Update dots
+        document.querySelectorAll(".templates-dot").forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      }
+
+      // Toggle FAQ
+      function toggleFaq(element) {
+        element.classList.toggle("active");
+      }
+
+      // ... existing script ...
+    </script>
+  </body>
+</html>
