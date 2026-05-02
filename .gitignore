@@ -3,3 +3,5 @@ edge-profile/
 *.log
 .DS_Store
 Thumbs.db
+images/**/*-tmp.webp
+images/**/*copy-test*.webp
