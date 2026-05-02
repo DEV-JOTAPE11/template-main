@@ -766,188 +766,194 @@
         background: rgba(75, 26, 158, 0.7);
       }
 
-      /* Testimonials Section */
-      .testimonials-section {
-        padding: 100px 0;
-        position: relative;
+      /* =============================================
+         SOCIAL PROOF — GLASSMORPHISM MARQUEE
+         ============================================= */
+      .social-proof-section {
+        width: 100%;
+        padding: 80px 0;
         overflow: hidden;
-      }
-
-      .testimonials-header {
-        text-align: center;
-        margin-bottom: 60px;
         position: relative;
-        z-index: 2;
       }
 
-      .testimonials-title-wrapper {
-        display: flex;
+      .social-proof-header {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 48px;
+        padding: 0 20px;
+      }
+
+      .social-proof-badge {
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .testimonials-line {
-        flex-grow: 1;
-        height: 1px;
-        background: linear-gradient(
-          270deg,
-          #fff 0%,
-          #6d35d8 12%,
-          #4b1a9e 30%,
-          #0b0c0d 100%
-        );
-      }
-
-      .testimonials-title {
-        color: #4b1a9e;
-        font-size: 16px;
+        margin-bottom: 18px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        background: rgba(75, 26, 158, 0.15);
+        border: 1px solid rgba(109, 53, 216, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        font-size: 0.8rem;
         font-weight: 600;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
         text-transform: uppercase;
-        padding: 0 30px;
+        color: #a78bfa;
       }
 
-      .testimonials-slider-container {
+      .social-proof-header h2 {
+        color: #fff;
+        font-family: "Unbounded", cursive;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1.3;
+        letter-spacing: -1px;
+        margin-bottom: 16px;
+      }
+
+      .social-proof-header p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      /* Marquee container */
+      .testimonials-marquee {
+        width: 100%;
+        overflow: hidden;
         position: relative;
-        padding: 40px 0;
       }
 
-      .testimonials-slider-container::before,
-      .testimonials-slider-container::after {
+      /* Edge fade overlays */
+      .testimonials-marquee::before,
+      .testimonials-marquee::after {
         content: "";
         position: absolute;
         top: 0;
-        width: 20%;
+        width: 12%;
         height: 100%;
         z-index: 2;
         pointer-events: none;
       }
 
-      .testimonials-slider-container::before {
+      .testimonials-marquee::before {
         left: 0;
         background: linear-gradient(
           90deg,
-          rgba(1, 1, 1, 1) 0%,
-          rgba(1, 1, 1, 0.8) 50%,
-          rgba(1, 1, 1, 0) 100%
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0.6) 50%,
+          rgba(0, 0, 0, 0) 100%
         );
       }
 
-      .testimonials-slider-container::after {
+      .testimonials-marquee::after {
         right: 0;
         background: linear-gradient(
           270deg,
-          rgba(11, 12, 13, 1) 0%,
-          rgba(11, 12, 13, 0.8) 50%,
-          rgba(11, 12, 13, 0) 100%
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0.6) 50%,
+          rgba(0, 0, 0, 0) 100%
         );
       }
 
-      .testimonials-slider {
-        display: flex;
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-      }
-
+      /* The scrolling track */
       .testimonials-track {
         display: flex;
-        animation: testimonialScroll 40s linear infinite;
-        width: fit-content;
+        width: max-content;
+        gap: 20px;
+        animation: testimonialsMarquee 45s linear infinite;
+        will-change: transform;
       }
 
-      .testimonials-track-reverse {
-        display: flex;
-        animation: testimonialScrollReverse 40s linear infinite;
-        width: fit-content;
+      .testimonials-marquee:hover .testimonials-track {
+        animation-play-state: paused;
       }
 
-      @keyframes testimonialScroll {
-        0% {
+      @keyframes testimonialsMarquee {
+        from {
           transform: translateX(0);
         }
-        100% {
-          transform: translateX(
-            calc(-350px * 6 - 30px * 6)
-          ); /* Width of cards × number of cards */
+        to {
+          transform: translateX(-50%);
         }
       }
 
-      @keyframes testimonialScrollReverse {
-        0% {
-          transform: translateX(
-            calc(-350px * 6 - 30px * 6)
-          ); /* Width of cards × number of cards */
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
-
+      /* Individual card — glassmorphism */
       .testimonial-card {
+        width: 340px;
+        min-height: 240px;
         flex: 0 0 auto;
-        width: 350px;
-        background-color: #101112;
-        border-radius: 10px;
-        padding: 30px;
-        margin: 0 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
-
-      .testimonial-stars {
-        display: flex;
-        margin-bottom: 15px;
-      }
-
-      .testimonial-star {
-        color: #4b1a9e;
-        margin-right: 5px;
-      }
-
-      .testimonial-quote {
+        padding: 28px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow:
+          0 20px 45px rgba(0, 0, 0, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12);
         color: #fff;
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 20px;
-        min-height: 80px;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        display: flex;
+        flex-direction: column;
       }
 
-      .testimonial-author {
+      .testimonial-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow:
+          0 28px 55px rgba(75, 26, 158, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      }
+
+      /* Profile row */
+      .testimonial-profile {
         display: flex;
         align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
       }
 
-      .testimonial-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 15px;
-        border: 2px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .testimonial-avatar img {
-        width: 100%;
-        height: 100%;
+      .testimonial-profile img {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
         object-fit: cover;
+        border: 2px solid rgba(109, 53, 216, 0.4);
+        flex-shrink: 0;
       }
 
-      .testimonial-info {
-        flex: 1;
-      }
-
-      .testimonial-name {
+      .testimonial-profile-info h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
         color: #fff;
-        font-weight: 600;
-        font-size: 16px;
-        margin-bottom: 3px;
       }
 
-      .testimonial-position {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 14px;
+      .testimonial-profile-info span {
+        display: block;
+        margin-top: 3px;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* Quote text */
+      .testimonial-text {
+        margin: 0 0 auto;
+        padding-bottom: 18px;
+        font-size: 0.95rem;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.82);
+        font-style: italic;
+        flex-grow: 1;
+      }
+
+      /* Star rating */
+      .testimonial-stars {
+        display: flex;
+        gap: 3px;
+        color: #d4af37;
+        font-size: 1rem;
+        letter-spacing: 1px;
       }
 
       /* Pricing Section */
@@ -1444,7 +1450,7 @@
         }
 
         .features-section,
-        .testimonials-section,
+        .social-proof-section,
         .pricing-section,
         .faq-section {
           padding: 60px 0;
@@ -1457,8 +1463,7 @@
         }
 
         .features-subtitle,
-        .templates-subtitle,
-        .testimonials-title {
+        .templates-subtitle {
           font-size: 12px;
         }
 
@@ -1476,14 +1481,20 @@
           margin: 0 10px;
         }
 
-        .testimonial-card {
-          width: 280px;
-          padding: 20px;
+        .social-proof-header h2 {
+          font-size: 28px;
         }
 
-        .testimonial-quote {
-          font-size: 14px;
-          min-height: 100px;
+        .testimonial-card {
+          width: 290px;
+          min-height: 220px;
+          padding: 22px;
+          border-radius: 24px;
+        }
+
+        .testimonials-track {
+          gap: 14px;
+          animation-duration: 55s;
         }
 
         .pricing-card {
@@ -1568,17 +1579,17 @@
         }
 
         .testimonial-card {
-          width: 250px;
-          padding: 15px;
+          width: 260px;
+          min-height: 200px;
+          padding: 18px;
         }
 
-        .testimonial-quote {
-          min-height: 120px;
+        .social-proof-header h2 {
+          font-size: 1.6rem;
         }
 
-        .testimonial-avatar {
-          width: 40px;
-          height: 40px;
+        .social-proof-header p {
+          font-size: 15px;
         }
 
         .price-value {
@@ -1637,78 +1648,162 @@
         text-shadow: 0 0 5px rgba(75, 26, 158, 0.5);
       }
 
-      /* Testimonials Grid */
-      .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
+      /* ==========================================================================
+         SCROLL REVEAL ANIMATION SYSTEM
+         ========================================================================== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+      .reveal-scale {
+        opacity: 0;
+        transform: scale(0.92);
+        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-scale.is-visible { opacity: 1; transform: scale(1); }
+
+      /* Stagger delays */
+      .reveal-delay-1 { transition-delay: 0.1s; }
+      .reveal-delay-2 { transition-delay: 0.22s; }
+      .reveal-delay-3 { transition-delay: 0.34s; }
+      .reveal-delay-4 { transition-delay: 0.46s; }
+      .reveal-delay-5 { transition-delay: 0.58s; }
+
+      /* Enhanced CTA button hover */
+      .cta-button {
+        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                    box-shadow 0.35s ease;
+      }
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px rgba(255, 255, 255, 0.18);
+      }
+      .pricing-button {
+        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                    box-shadow 0.35s ease;
+      }
+      .pricing-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 36px rgba(75, 26, 158, 0.45);
       }
 
-      .testimonial-grid-card {
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
+      /* Enhanced feature card hover */
+      .feature-card {
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                    box-shadow 0.4s ease,
+                    border-color 0.4s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(75, 26, 158, 0.22);
+        border-color: rgba(109, 53, 216, 0.3);
       }
 
-      .testimonial-grid-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(75, 26, 158, 0.2);
+      /* Enhanced FAQ item hover */
+      .faq-item {
+        transition: box-shadow 0.35s ease, border-color 0.35s ease;
+        border: 1px solid transparent;
+      }
+      .faq-item:hover {
+        border-color: rgba(75, 26, 158, 0.2);
       }
 
-      .testimonial-grid-card .testimonial-stars {
-        color: #d4af37;
-        font-size: 18px;
-        margin-bottom: 15px;
-        letter-spacing: 2px;
+      /* Pricing card enhanced hover */
+      .pricing-card {
+        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                    box-shadow 0.45s ease,
+                    border-color 0.45s ease;
+      }
+      .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 32px 64px rgba(75, 26, 158, 0.32);
+        border-color: rgba(109, 53, 216, 0.3);
       }
 
-      .testimonial-grid-card .testimonial-quote {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 25px;
-        flex-grow: 1;
-        font-style: italic;
+      /* ==========================================================================
+         SOCIAL PROOF — OVERFLOW FIX (cards not clipped on hover)
+         ========================================================================== */
+      .social-proof-section {
+        overflow: visible;
+        padding-top: 80px;
+        padding-bottom: 100px;
       }
-
-      .testimonial-author {
-        display: flex;
-        align-items: center;
+      .testimonials-marquee {
+        overflow-x: clip;
+        overflow-y: visible;
+        padding: 24px 0;
       }
-      
-      .testimonial-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 15px;
-        border: 2px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      .testimonial-avatar img {
-        width: 100%;
+      .testimonials-marquee::before,
+      .testimonials-marquee::after {
+        top: 0;
         height: 100%;
-        object-fit: cover;
+      }
+      .testimonials-track {
+        overflow: visible;
+      }
+      .testimonial-card {
+        position: relative;
+        z-index: 1;
+        transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+                    box-shadow 0.38s ease,
+                    border-color 0.38s ease;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-12px) scale(1.03);
+        z-index: 20;
+        box-shadow:
+          0 32px 60px rgba(75, 26, 158, 0.28),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        border-color: rgba(109, 53, 216, 0.35);
       }
 
-      @media (max-width: 992px) {
-        .testimonials-grid {
-          grid-template-columns: repeat(2, 1fr);
+      /* ==========================================================================
+         ACCESSIBILITY — prefers-reduced-motion
+         ========================================================================== */
+      @media (prefers-reduced-motion: reduce) {
+        .reveal, .reveal-left, .reveal-right, .reveal-scale {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
         }
-      }
-
-      @media (max-width: 768px) {
-        .testimonials-grid {
-          grid-template-columns: 1fr;
+        .testimonials-track {
+          animation: none !important;
+        }
+        .carousel-track {
+          animation: none !important;
+        }
+        .testimonial-card,
+        .feature-card,
+        .pricing-card,
+        .cta-button,
+        .pricing-button,
+        .faq-item {
+          transition: none !important;
         }
       }
     </style>
@@ -1719,10 +1814,7 @@
     </div>
 
     <div class="hero">
-      <a href="https://pay.kiwify.com.br/OyEqNke" class="cta-button">
-        Quero dominar os fundamentos agora
-        <span class="arrow">→</span>
-      </a>
+     
 
       <div class="divider">
         <div class="divider-line-left"></div>
@@ -1730,13 +1822,13 @@
         <div class="divider-line-right"></div>
       </div>
 
-      <h1 class="hero-title">DOMINE QUALQUER CABELO<br />E QUALQUER CORTE</h1>
+      <h1 class="hero-title reveal reveal-delay-1">DOMINE QUALQUER CABELO<br />E QUALQUER CORTE</h1>
 
-      <p class="hero-subtitle">
+      <p class="hero-subtitle reveal reveal-delay-2">
         Pare de tentar decorar cortes isolados. Aprenda os fundamentos reais<br />para faturar mais e se destacar como barbeiro profissional.
       </p>
 
-      <div class="video-container">
+      <div class="video-container reveal reveal-scale reveal-delay-3">
         <div class="video-wrapper" id="customVideoWrapper">
           <video 
             id="mainVideo"
@@ -1757,12 +1849,12 @@
         </div>
       </div>
 
-      <a href="https://pay.kiwify.com.br/OyEqNke" class="cta-button">
+      <a href="https://pay.kiwify.com.br/OyEqNke" class="cta-button reveal reveal-delay-4">
         Quero dominar os fundamentos agora
         <span class="arrow">→</span>
       </a>
 
-      <div class="reviews">
+      <div class="reviews reveal reveal-delay-5">
         <div class="avatar-group">
           <img class="avatar" src="./images/people/1.png" />
           <img class="avatar" src="./images/people/2.png" />
@@ -2023,11 +2115,11 @@
 
     <!-- Sales Copy Section -->
     <div class="sales-copy">
-      <h2 class="sales-copy-title">
+      <h2 class="sales-copy-title reveal">
         Chega de copiar cortes sem entender o porquê.
       </h2>
 
-      <p>
+      <p class="reveal reveal-delay-1">
         Você já passou horas tentando acertar aquele corte perfeito, lutando com marcas no degradê ou clientes insatisfeitos porque o cabelo simplesmente não cooperava? Seu esforço é valioso demais para continuar estagnado.
       </p>
 
@@ -2066,17 +2158,17 @@
     <div class="features-section">
       <div class="features-container">
         <div class="features-header">
-          <div class="features-subtitle-wrapper">
+          <div class="features-subtitle-wrapper reveal">
             <div class="features-subtitle-line-left"></div>
             <span class="features-subtitle">O QUE VOCÊ VAI APRENDER</span>
             <div class="features-subtitle-line-right"></div>
           </div>
-          <h2 class="features-title">Uma grade focada no mundo real da barbearia</h2>
-          <div class="features-divider">*</div>
+          <h2 class="features-title reveal reveal-delay-1">Uma grade focada no mundo real da barbearia</h2>
+          <div class="features-divider reveal reveal-delay-2">*</div>
         </div>
 
         <div class="features-grid">
-          <div class="feature-card">
+          <div class="feature-card reveal reveal-delay-1">
             <div class="feature-icon">
               <svg
                 width="24"
@@ -2114,7 +2206,7 @@
             </p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card reveal reveal-delay-2">
             <div class="feature-icon">
               <svg
                 width="24"
@@ -2166,7 +2258,7 @@
             </p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card reveal reveal-delay-3">
             <div class="feature-icon">
               <svg
                 width="24"
@@ -2200,163 +2292,33 @@
       </div>
     </div>
 
-    <!-- Testimonials Section - Grid -->
-    <div class="testimonials-section" style="padding: 100px 0; position: relative;">
-      <div class="templates-header">
-        <div class="templates-subtitle-wrapper">
-          <div class="templates-subtitle-line-left"></div>
-          <span class="templates-subtitle">PROVAS SOCIAIS</span>
-          <div class="templates-subtitle-line-right"></div>
-        </div>
-        <h2 class="templates-title">A base que já transformou centenas de profissionais</h2>
-        <p class="faq-description" style="margin-bottom: 40px; text-align: center; font-size: 18px; color: rgba(255, 255, 255, 0.8); max-width: 800px; margin-left: auto; margin-right: auto;">Pessoas reais que deram um salto em suas carreiras através da compreensão real dos fundamentos do cabelo.</p>
+    <!-- Social Proof — Glassmorphism Marquee -->
+    <section class="social-proof-section" id="socialProofSection">
+      <div class="social-proof-header">
+        <span class="social-proof-badge reveal">Provas Sociais</span>
+        <h2 class="reveal reveal-delay-1">A base que já transformou centenas de profissionais</h2>
+        <p class="reveal reveal-delay-2">Pessoas reais que deram um salto em suas carreiras através da compreensão real dos fundamentos do cabelo.</p>
       </div>
 
-      <div class="templates-showcase">
-        <div class="templates-slider" style="height: auto; padding: 20px 0;">
-          <div class="templates-slides">
-            
-            <!-- Card 1 -->
-            <div class="template-slide" style="display: flex; justify-content: center; padding: 0 40px;">
-              <div class="testimonial-grid-card" style="width: 100%; max-width: 600px; margin: 0 auto;">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">"Mlk tem uma didática boa, fora as aulas teóricas que me ensinaram muitas coisas também."</p>
-                <div class="testimonial-author">
-                  <div class="testimonial-avatar">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" alt="Lucas Barbosa" />
-                  </div>
-                  <div class="testimonial-info">
-                    <div class="testimonial-name">Lucas Barbosa</div>
-                    <div class="testimonial-position">Barbeiro Aluno</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Card 2 -->
-            <div class="template-slide" style="display: flex; justify-content: center; padding: 0 40px;">
-              <div class="testimonial-grid-card" style="width: 100%; max-width: 600px; margin: 0 auto;">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">"Me surpreendeu ainda mais pelo preço, me sinto mais confiante agora quando vou treinar."</p>
-                <div class="testimonial-author">
-                  <div class="testimonial-avatar">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="Rafael" />
-                  </div>
-                  <div class="testimonial-info">
-                    <div class="testimonial-name">Rafael</div>
-                    <div class="testimonial-position">Aluno Iniciante</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="template-slide" style="display: flex; justify-content: center; padding: 0 40px;">
-              <div class="testimonial-grid-card" style="width: 100%; max-width: 600px; margin: 0 auto;">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">"Aprendi em poucas semanas o que levei vários meses tentando sozinho na raça."</p>
-                <div class="testimonial-author">
-                  <div class="testimonial-avatar">
-                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop" alt="Jotta" />
-                  </div>
-                  <div class="testimonial-info">
-                    <div class="testimonial-name">Jotta</div>
-                    <div class="testimonial-position">Barbeiro Profissional</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="template-slide" style="display: flex; justify-content: center; padding: 0 40px;">
-              <div class="testimonial-grid-card" style="width: 100%; max-width: 600px; margin: 0 auto;">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">"Graças ao curso melhorei bastante e estou pensando em abrir minha própria barbearia em breve."</p>
-                <div class="testimonial-author">
-                  <div class="testimonial-avatar">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop" alt="Caio Yamamoto" />
-                  </div>
-                  <div class="testimonial-info">
-                    <div class="testimonial-name">Caio Yamamoto</div>
-                    <div class="testimonial-position">Empreendedor</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="template-slide" style="display: flex; justify-content: center; padding: 0 40px;">
-              <div class="testimonial-grid-card" style="width: 100%; max-width: 600px; margin: 0 auto;">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">"Sempre errava o encaixe da aresta. Depois de ver como o peso funciona de verdade, tudo fez sentido."</p>
-                <div class="testimonial-author">
-                  <div class="testimonial-avatar">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop" alt="Fernando Souza" />
-                  </div>
-                  <div class="testimonial-info">
-                    <div class="testimonial-name">Fernando Souza</div>
-                    <div class="testimonial-position">Barbeiro Pleno</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="template-slide" style="display: flex; justify-content: center; padding: 0 40px;">
-              <div class="testimonial-grid-card" style="width: 100%; max-width: 600px; margin: 0 auto;">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">"O módulo sobre formato da cabeça mudou meu jogo. Agora eu entrego o corte que realmente combina com o cliente."</p>
-                <div class="testimonial-author">
-                  <div class="testimonial-avatar">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop" alt="Matheus Costa" />
-                  </div>
-                  <div class="testimonial-info">
-                    <div class="testimonial-name">Matheus Costa</div>
-                    <div class="testimonial-position">Proprietário de Barbearia</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="templates-navigation">
-          <div class="templates-arrow templates-prev" onclick="changeSlide(-1)">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="templates-arrow templates-next" onclick="changeSlide(1)">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-
-        <div class="templates-pagination">
-          <div class="templates-dot active" onclick="goToSlide(0)"></div>
-          <div class="templates-dot" onclick="goToSlide(1)"></div>
-          <div class="templates-dot" onclick="goToSlide(2)"></div>
-          <div class="templates-dot" onclick="goToSlide(3)"></div>
-          <div class="templates-dot" onclick="goToSlide(4)"></div>
-          <div class="templates-dot" onclick="goToSlide(5)"></div>
+      <div class="testimonials-marquee" id="testimonialsMarquee">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <!-- Cards rendered via JS -->
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Pricing Section -->
     <div class="pricing-section">
       <div class="pricing-container">
         <div class="pricing-header">
-          <span class="pricing-subtitle">OFERTA EXCLUSIVA</span>
-          <h2 class="pricing-title">Invista na sua evolução profissional</h2>
-          <p class="pricing-description">
+          <span class="pricing-subtitle reveal">OFERTA EXCLUSIVA</span>
+          <h2 class="pricing-title reveal reveal-delay-1">Invista na sua evolução profissional</h2>
+          <p class="pricing-description reveal reveal-delay-2">
             Evite erros na cadeira da barbearia. Tenha a base completa e os atalhos reais do mercado por um preço incomparável
           </p>
         </div>
 
-        <div class="pricing-card-container">
+        <div class="pricing-card-container reveal-scale reveal reveal-delay-3">
           <div class="pricing-card">
             <div class="pricing-card-header">
               <h3 class="pricing-card-title">Pacote Completo</h3>
@@ -2537,18 +2499,18 @@
     <div class="faq-section">
       <div class="faq-container">
         <div class="faq-header">
-          <div class="faq-title-wrapper">
+          <div class="faq-title-wrapper reveal">
             <div class="faq-line"></div>
             <h2 class="faq-title">FAQ</h2>
             <div class="faq-line faq-line-right"></div>
           </div>
-          <p class="faq-description">
+          <p class="faq-description reveal reveal-delay-1">
             As dúvidas mais comuns sobre o Barber Start
           </p>
         </div>
 
         <div class="faq-list">
-          <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-1" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">
                 Para quem é o daPrata Barber Start?
@@ -2562,7 +2524,7 @@
             </div>
           </div>
 
-          <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-2" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">Como e quando vou receber o acesso?</h3>
               <div class="faq-icon"></div>
@@ -2574,7 +2536,7 @@
             </div>
           </div>
 
-          <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-3" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">
                 Terei algum suporte se surgir dúvidas?
@@ -2588,7 +2550,7 @@
             </div>
           </div>
 
-          <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-4" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">
                 Por quanto tempo tenho acesso ao curso?
@@ -2602,7 +2564,7 @@
             </div>
           </div>
 
-          <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-5" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">
                 E se eu não gostar das aulas? Tem garantia?
@@ -2618,6 +2580,38 @@
         </div>
       </div>
     </div>
+
+    <!-- Scroll Reveal Animation Engine -->
+    <script>
+      (function() {
+        var revealSelector = '.reveal, .reveal-left, .reveal-right, .reveal-scale';
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (prefersReduced) {
+          // Show everything immediately for accessibility
+          document.querySelectorAll(revealSelector).forEach(function(el) {
+            el.classList.add('is-visible');
+          });
+          return;
+        }
+
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll(revealSelector).forEach(function(el) {
+          observer.observe(el);
+        });
+      })();
+    </script>
 
     <!-- Adicione este script antes do fechamento do body -->
     <script>
@@ -2686,71 +2680,84 @@
           });
       });
 
-      // Funções existentes para o carrossel
-      let currentSlide = 0;
-      const slidesElements = document.querySelectorAll(".template-slide");
-      const totalSlides = slidesElements.length;
-
-      function getItemsPerView() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 992) return 2;
-        return 3;
-      }
-
-      function changeSlide(direction) {
-        const itemsPerView = getItemsPerView();
-        const maxSlide = totalSlides - itemsPerView;
-        
-        currentSlide = currentSlide + direction;
-        
-        if (currentSlide > maxSlide) {
-          currentSlide = 0;
-        } else if (currentSlide < 0) {
-          currentSlide = maxSlide;
+      // =============================================
+      // SOCIAL PROOF — Marquee Testimonials
+      // =============================================
+      const testimonials = [
+        {
+          name: "Lucas Barbosa",
+          role: "Barbeiro Aluno",
+          content: "Mlk tem uma didática boa, fora as aulas teóricas que me ensinaram muitas coisas também.",
+          avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+          rating: 5
+        },
+        {
+          name: "Rafael",
+          role: "Aluno Iniciante",
+          content: "Me surpreendeu ainda mais pelo preço, me sinto mais confiante agora quando vou treinar.",
+          avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+          rating: 5
+        },
+        {
+          name: "Jotta",
+          role: "Barbeiro Profissional",
+          content: "Aprendi em poucas semanas o que levei vários meses tentando sozinho na raça.",
+          avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop",
+          rating: 5
+        },
+        {
+          name: "Caio Yamamoto",
+          role: "Empreendedor",
+          content: "Graças ao curso melhorei bastante e estou pensando em abrir minha própria barbearia em breve.",
+          avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop",
+          rating: 5
+        },
+        {
+          name: "Fernando Souza",
+          role: "Barbeiro Pleno",
+          content: "Sempre errava o encaixe da aresta. Depois de ver como o peso funciona de verdade, tudo fez sentido.",
+          avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+          rating: 5
+        },
+        {
+          name: "Matheus Costa",
+          role: "Proprietário de Barbearia",
+          content: "O módulo sobre formato da cabeça mudou meu jogo. Agora eu entrego o corte que realmente combina com o cliente.",
+          avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
+          rating: 5
         }
-        updateSlider();
+      ];
+
+      function createTestimonialCard(t) {
+        const card = document.createElement("article");
+        card.className = "testimonial-card";
+        const stars = "★".repeat(t.rating || 5);
+        card.innerHTML = `
+          <div class="testimonial-profile">
+            <img src="${t.avatar}" alt="${t.name}" loading="lazy" />
+            <div class="testimonial-profile-info">
+              <h3>${t.name}</h3>
+              <span>${t.role || "Cliente"}</span>
+            </div>
+          </div>
+          <p class="testimonial-text">"${t.content}"</p>
+          <div class="testimonial-stars" aria-label="${t.rating || 5} estrelas">${stars}</div>
+        `;
+        return card;
       }
 
-      function goToSlide(slideIndex) {
-        const maxSlide = totalSlides - getItemsPerView();
-        currentSlide = Math.min(slideIndex, maxSlide);
-        updateSlider();
-      }
-
-      function updateSlider() {
-        const slides = document.querySelector(".templates-slides");
-        if (!slides) return;
-        
-        const itemsPerView = getItemsPerView();
-        const slideWidth = 100 / itemsPerView;
-        
-        slides.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
-
-        // Update dots
-        const dots = document.querySelectorAll(".templates-dot");
-        const maxSlide = totalSlides - itemsPerView;
-        
-        dots.forEach((dot, index) => {
-          if (index > maxSlide) {
-            dot.style.display = 'none';
-          } else {
-            dot.style.display = 'inline-block';
-            dot.classList.toggle("active", index === currentSlide);
-          }
+      function renderTestimonials() {
+        const track = document.getElementById("testimonialsTrack");
+        if (!track) return;
+        track.innerHTML = "";
+        // Duplicate to create seamless infinite loop
+        const duplicated = [...testimonials, ...testimonials];
+        duplicated.forEach(function(t) {
+          track.appendChild(createTestimonialCard(t));
         });
       }
 
-      // Initialize dots on load
-      window.addEventListener('DOMContentLoaded', () => {
-         updateSlider();
-      });
-
-      // Update slider on resize
-      window.addEventListener('resize', () => {
-         const maxSlide = totalSlides - getItemsPerView();
-         if (currentSlide > maxSlide) currentSlide = maxSlide;
-         updateSlider();
-      });
+      renderTestimonials();
 
       // Toggle FAQ
       function toggleFaq(element) {
