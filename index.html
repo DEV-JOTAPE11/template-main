@@ -3,21 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href="/" />
+    <!-- TODO SEO: quando o domínio final estiver definido, trocar URLs relativas de canonical/OG/Twitter/sitemap por URLs absolutas de produção. -->
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-17040961520"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "AW-17040961520");
-    </script>
-
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link
+      rel="preload"
+      as="image"
+      href="./images/Edite_esta_imagem_mantendo_exatamente_202605010237.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=AW-17040961520"
@@ -33,6 +31,17 @@
     </script>
     <title>daPrata Barber Start | Domine os Fundamentos da Barbearia</title>
     <meta name="description" content="Pare de aprender cortes isolados. Aprenda os fundamentos reais para dominar qualquer cabelo e corte com o daPrata Barber Start." />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="daPrata Barber Start | Domine os Fundamentos da Barbearia" />
+    <meta property="og:description" content="Aprenda os fundamentos reais da barbearia para dominar qualquer cabelo e corte com mais confiança." />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/images/image.webp" />
+    <meta property="og:image:alt" content="Aula do daPrata Barber Start em vídeo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="daPrata Barber Start | Domine os Fundamentos da Barbearia" />
+    <meta name="twitter:description" content="Aprenda os fundamentos reais da barbearia para dominar qualquer cabelo e corte com mais confiança." />
+    <meta name="twitter:image" content="/images/image.webp" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -65,6 +74,10 @@
 
       .hero {
         background-image: url("./images/Edite_esta_imagem_mantendo_exatamente_202605010237.jpeg");
+        background-image: image-set(
+          url("./images/Edite_esta_imagem_mantendo_exatamente_202605010237.webp") type("image/webp"),
+          url("./images/Edite_esta_imagem_mantendo_exatamente_202605010237.jpeg") type("image/jpeg")
+        );
         background-size: cover;
         background-position: center;
         min-height: 100vh;
@@ -209,6 +222,12 @@
         transition: opacity 0.3s ease;
         z-index: 10;
         cursor: pointer;
+      }
+
+      .video-overlay:focus-visible,
+      .faq-item:focus-visible {
+        outline: 2px solid #6d35d8;
+        outline-offset: 4px;
       }
 
       .video-wrapper.is-playing .video-overlay {
@@ -370,30 +389,56 @@
 
       /* Sales Copy Section */
       .sales-copy {
-        max-width: 800px;
-        margin: 80px auto;
-        padding: 0 20px;
+        position: relative;
+        overflow: hidden;
+        min-height: 720px;
+        margin: 0;
+        padding: 120px 20px;
+        background-image:
+          linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.96) 24%, rgba(5, 5, 5, 0.74) 42%, rgba(5, 5, 5, 0.24) 62%, rgba(5, 5, 5, 0.05) 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.48) 100%),
+          url("./images/image-copy.png");
+        background-image:
+          linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.96) 24%, rgba(5, 5, 5, 0.74) 42%, rgba(5, 5, 5, 0.24) 62%, rgba(5, 5, 5, 0.05) 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.48) 100%),
+          image-set(
+            url("./images/image-copy.webp") type("image/webp"),
+            url("./images/image-copy.png") type("image/png")
+          );
+        background-size: cover;
+        background-position: 72% center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+      }
+
+      .sales-copy-content {
+        width: 100%;
+        max-width: 520px;
+        margin-left: max(20px, calc((100vw - 1200px) / 2));
+        position: relative;
+        z-index: 1;
       }
 
       .sales-copy-title {
         color: #fff;
         font-family: "Unbounded", cursive;
-        font-size: 28px;
+        font-size: 34px;
         font-style: normal;
         font-weight: 400;
-        line-height: 36.4px;
+        line-height: 1.18;
         letter-spacing: -0.84px;
         text-transform: capitalize;
-        margin-bottom: 30px;
+        margin-bottom: 26px;
       }
 
       .sales-copy p {
         color: rgba(255, 255, 255, 0.8);
         font-family: "Inter", sans-serif;
         font-weight: 300;
-        font-size: 18px;
-        line-height: 1.8;
-        margin-bottom: 24px;
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 18px;
       }
 
       .sales-copy .highlight {
@@ -408,7 +453,11 @@
 
       /* Features Section */
       .features-section {
-        background-image: url("./images/feature-site-jonas.jpeg");
+        background-image: url("./images/Edite_esta_imagem_mantendo_exatamente_202605010237.jpeg");
+        background-image: image-set(
+          url("./images/Edite_esta_imagem_mantendo_exatamente_202605010237.webp") type("image/webp"),
+          url("./images/Edite_esta_imagem_mantendo_exatamente_202605010237.jpeg") type("image/jpeg")
+        );
         background-size: cover;
         background-position: center;
         padding: 100px 20px;
@@ -471,6 +520,56 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         padding: 0 20px;
+      }
+
+      .section-kicker {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 18px;
+      }
+
+      .section-kicker-line {
+        flex-grow: 1;
+        height: 1px;
+        min-width: 42px;
+      }
+
+      .section-kicker-line-left {
+        background: linear-gradient(
+          270deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .section-kicker-line-right {
+        background: linear-gradient(
+          90deg,
+          #fff 0%,
+          #6d35d8 12%,
+          #4b1a9e 30%,
+          #0b0c0d 100%
+        );
+      }
+
+      .section-kicker-text {
+        padding: 0 20px;
+        background: linear-gradient(135deg, #4b485e, #ffffff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        white-space: nowrap;
       }
 
       .features-title {
@@ -861,20 +960,27 @@
         display: flex;
         width: max-content;
         gap: 20px;
-        animation: testimonialsMarquee 45s linear infinite;
+        animation: none;
         will-change: transform;
+        transform: translate3d(0, 0, 0);
       }
 
-      .testimonials-marquee:hover .testimonials-track {
-        animation-play-state: paused;
+      .testimonials-track.is-running {
+        animation: testimonialsMarquee 45s linear infinite;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .testimonials-marquee:hover .testimonials-track.is-running {
+          animation-play-state: paused;
+        }
       }
 
       @keyframes testimonialsMarquee {
         from {
-          transform: translateX(0);
+          transform: translate3d(0, 0, 0);
         }
         to {
-          transform: translateX(-50%);
+          transform: translate3d(-50%, 0, 0);
         }
       }
 
@@ -883,26 +989,22 @@
         width: 340px;
         min-height: 240px;
         flex: 0 0 auto;
-        padding: 28px;
-        border-radius: 28px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        box-shadow:
-          0 20px 45px rgba(0, 0, 0, 0.25),
-          inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        padding: 30px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.3%, rgba(255, 255, 255, 0.05) 99.7%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: none;
         color: #fff;
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
       }
 
       .testimonial-card:hover {
-        transform: translateY(-6px) scale(1.02);
-        box-shadow:
-          0 28px 55px rgba(75, 26, 158, 0.2),
-          inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(75, 26, 158, 0.2);
       }
 
       /* Profile row */
@@ -959,6 +1061,10 @@
       /* Pricing Section */
       .pricing-section {
         background-image: url("./images/budget-jonas-lp.jpeg");
+        background-image: image-set(
+          url("./images/budget-jonas-lp.webp") type("image/webp"),
+          url("./images/budget-jonas-lp.jpeg") type("image/jpeg")
+        );
         background-size: cover;
         background-position: center;
         padding: 100px 0;
@@ -1440,13 +1546,39 @@
           height: 250px;
         }
 
+        .sales-copy {
+          min-height: auto;
+          padding: 380px 20px 68px;
+          background-image:
+            linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.3) 33%, #050505 58%, #050505 100%),
+            url("./images/image-copy.png");
+          background-image:
+            linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.3) 33%, #050505 58%, #050505 100%),
+            image-set(
+              url("./images/image-copy.webp") type("image/webp"),
+              url("./images/image-copy.png") type("image/png")
+            );
+          background-size: auto 420px;
+          background-position: 64% top;
+          background-color: #050505;
+          align-items: flex-end;
+        }
+
+        .sales-copy-content {
+          max-width: 560px;
+          margin: 0 auto;
+        }
+
         .sales-copy-title {
           font-size: 24px;
           line-height: 1.3;
+          margin-bottom: 18px;
         }
 
         .sales-copy p {
           font-size: 16px;
+          line-height: 1.65;
+          margin-bottom: 14px;
         }
 
         .features-section,
@@ -1494,6 +1626,9 @@
 
         .testimonials-track {
           gap: 14px;
+        }
+
+        .testimonials-track.is-running {
           animation-duration: 55s;
         }
 
@@ -1584,6 +1719,20 @@
           padding: 18px;
         }
 
+        .section-kicker {
+          max-width: 100%;
+        }
+
+        .section-kicker-line {
+          min-width: 24px;
+        }
+
+        .section-kicker-text {
+          padding: 0 12px;
+          font-size: 12px;
+          letter-spacing: 0.8px;
+        }
+
         .social-proof-header h2 {
           font-size: 1.6rem;
         }
@@ -1654,8 +1803,8 @@
       .reveal {
         opacity: 0;
         transform: translateY(32px);
-        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
         will-change: opacity, transform;
       }
       .reveal.is-visible {
@@ -1665,47 +1814,47 @@
       .reveal-left {
         opacity: 0;
         transform: translateX(-40px);
-        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
         will-change: opacity, transform;
       }
       .reveal-left.is-visible { opacity: 1; transform: translateX(0); }
       .reveal-right {
         opacity: 0;
         transform: translateX(40px);
-        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
         will-change: opacity, transform;
       }
       .reveal-right.is-visible { opacity: 1; transform: translateX(0); }
       .reveal-scale {
         opacity: 0;
         transform: scale(0.92);
-        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
         will-change: opacity, transform;
       }
       .reveal-scale.is-visible { opacity: 1; transform: scale(1); }
 
       /* Stagger delays */
-      .reveal-delay-1 { transition-delay: 0.1s; }
-      .reveal-delay-2 { transition-delay: 0.22s; }
-      .reveal-delay-3 { transition-delay: 0.34s; }
-      .reveal-delay-4 { transition-delay: 0.46s; }
-      .reveal-delay-5 { transition-delay: 0.58s; }
+      .reveal-delay-1 { transition-delay: 0.15s; }
+      .reveal-delay-2 { transition-delay: 0.32s; }
+      .reveal-delay-3 { transition-delay: 0.48s; }
+      .reveal-delay-4 { transition-delay: 0.64s; }
+      .reveal-delay-5 { transition-delay: 0.8s; }
 
       /* Enhanced CTA button hover */
       .cta-button {
-        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-                    box-shadow 0.35s ease;
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.45s ease;
       }
       .cta-button:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 28px rgba(255, 255, 255, 0.18);
       }
       .pricing-button {
-        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-                    box-shadow 0.35s ease;
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.45s ease;
       }
       .pricing-button:hover {
         transform: translateY(-4px);
@@ -1714,9 +1863,9 @@
 
       /* Enhanced feature card hover */
       .feature-card {
-        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-                    box-shadow 0.4s ease,
-                    border-color 0.4s ease;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.5s ease,
+                    border-color 0.5s ease;
       }
       .feature-card:hover {
         transform: translateY(-8px);
@@ -1726,7 +1875,7 @@
 
       /* Enhanced FAQ item hover */
       .faq-item {
-        transition: box-shadow 0.35s ease, border-color 0.35s ease;
+        transition: box-shadow 0.45s ease, border-color 0.45s ease;
         border: 1px solid transparent;
       }
       .faq-item:hover {
@@ -1735,9 +1884,9 @@
 
       /* Pricing card enhanced hover */
       .pricing-card {
-        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-                    box-shadow 0.45s ease,
-                    border-color 0.45s ease;
+        transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.55s ease,
+                    border-color 0.55s ease;
       }
       .pricing-card:hover {
         transform: translateY(-10px);
@@ -1769,17 +1918,440 @@
       .testimonial-card {
         position: relative;
         z-index: 1;
-        transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
-                    box-shadow 0.38s ease,
-                    border-color 0.38s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
       .testimonial-card:hover {
-        transform: translateY(-12px) scale(1.03);
+        transform: translateY(-5px);
         z-index: 20;
-        box-shadow:
-          0 32px 60px rgba(75, 26, 158, 0.28),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 30px rgba(75, 26, 158, 0.2);
+      }
+
+      /* ==========================================================================
+         PLATFORM SHOWCASE SECTION (inspired by section6)
+         ========================================================================== */
+      .platform-showcase {
+        position: relative;
+        overflow: hidden;
+        background: #000000;
+        min-height: 720px;
+        isolation: isolate;
+      }
+      .platform-showcase::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background:
+          linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.08) 36%, #000 60%, #000 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 72%, rgba(0, 0, 0, 0.35) 100%);
+      }
+      .platform-showcase-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        max-width: 1380px;
+        min-height: 720px;
+        margin: 0 auto;
+        padding: 96px 48px;
+        position: relative;
+        z-index: 2;
+      }
+      .platform-showcase-image {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 58%;
+        min-width: 720px;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .platform-showcase-image picture {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .platform-showcase-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: left center;
+        border-radius: 0;
+      }
+      .platform-showcase-cards {
+        width: min(46%, 580px);
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        z-index: 2;
+      }
+      .platform-showcase-cards .ps-header {
+        margin-bottom: 8px;
+      }
+      .platform-showcase-cards .section-kicker {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 460px;
+      }
+      .platform-showcase-cards .ps-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        border-radius: 24px;
+        border: 1px solid rgba(109, 53, 216, 0.4);
+        background: rgba(75, 26, 158, 0.15);
+        color: #c9a4ff;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .platform-showcase-cards .ps-badge svg {
+        width: 16px;
+        height: 16px;
+        fill: #c9a4ff;
+      }
+      .platform-showcase-cards .ps-title {
+        font-family: "Unbounded", cursive;
+        font-size: 28px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.3;
+        margin-bottom: 4px;
+      }
+      .ps-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 24px 28px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(90deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+        position: relative;
+        cursor: default;
+        transition: background 0.45s ease, border-color 0.45s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1);
+      }
+      .ps-card::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 20%;
+        width: 3px; height: 60%;
+        background: #6d35d8;
+        border-radius: 2px;
+        box-shadow: 0 0 12px rgba(109, 53, 216, 0.5);
+        transition: background 0.4s, box-shadow 0.4s;
+      }
+      .ps-card:hover {
+        background: linear-gradient(135deg, #4b1a9e 0%, #6d35d8 100%);
+        border-color: rgba(109, 53, 216, 0.5);
+        transform: translateX(6px);
+      }
+      .ps-card:hover::before {
+        background: #fff;
+        box-shadow: 0 0 12px rgba(255,255,255,0.5);
+      }
+      .ps-card-icon {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ps-card-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: #c9a4ff;
+        stroke-width: 2;
+        transition: stroke 0.3s;
+      }
+      .ps-card:hover .ps-card-icon svg {
+        stroke: #fff;
+      }
+      .ps-card-text h4 {
+        font-size: 17px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+      .ps-card-text p {
+        font-size: 14px;
+        color: rgba(255,255,255,0.65);
+        line-height: 1.45;
+      }
+      .ps-card:hover .ps-card-text p {
+        color: rgba(255,255,255,0.9);
+      }
+      @media (max-width: 768px) {
+        .platform-showcase {
+          min-height: auto;
+        }
+        .platform-showcase::after {
+          background:
+            linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, #000 44%, #000 100%),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.3) 100%);
+        }
+        .platform-showcase-content {
+          min-height: auto;
+          padding: 310px 20px 64px;
+          display: block;
+        }
+        .platform-showcase-image {
+          width: 100%;
+          min-width: 0;
+          height: 380px;
+        }
+        .platform-showcase-image img {
+          object-position: 18% center;
+        }
+        .platform-showcase-cards {
+          width: 100%;
+        }
+        .platform-showcase-cards .ps-title {
+          font-size: 22px;
+          text-align: center;
+        }
+        .platform-showcase-cards .ps-header {
+          text-align: center;
+        }
+        .platform-showcase-cards .section-kicker {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .ps-card {
+          padding: 20px 22px;
+        }
+        .ps-card-text h4 { font-size: 15px; }
+        .ps-card-text p { font-size: 13px; }
+      }
+
+      /* ==========================================================================
+         BONUS TIMELINE SECTION (inspired by section14)
+         ========================================================================== */
+      .bonus-timeline-section {
+        position: relative;
+        overflow: hidden;
+        background-image: url('images/2-imagens-joans.jpeg');
+        background-image: image-set(
+          url("images/2-imagens-joans.webp") type("image/webp"),
+          url("images/2-imagens-joans.jpeg") type("image/jpeg")
+        );
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 100px 20px;
+        min-height: 600px;
+      }
+      .bonus-timeline-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .bonus-timeline-section > * {
+        position: relative;
+        z-index: 1;
+      }
+      .bonus-timeline-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 60px;
+      }
+      .bonus-timeline-header .bt-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        border-radius: 24px;
+        border: 1px solid rgba(109, 53, 216, 0.4);
+        background: rgba(75, 26, 158, 0.15);
+        color: #c9a4ff;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .bonus-timeline-header .bt-badge svg {
+        width: 16px;
+        height: 16px;
+        fill: #c9a4ff;
+      }
+      .bonus-timeline-header h2 {
+        font-family: "Unbounded", cursive;
+        font-size: 32px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.3;
+      }
+      .bonus-timeline-wrapper {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      /* Vertical line */
+      .bonus-timeline-wrapper::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0; bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0.5) 90%, transparent 100%);
+        transform: translateX(-50%);
+      }
+      .bt-item {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        margin-bottom: 40px;
+      }
+      .bt-item:last-child { margin-bottom: 0; }
+      /* Alternating left/right */
+      .bt-item:nth-child(odd) { justify-content: flex-start; padding-right: calc(50% + 30px); }
+      .bt-item:nth-child(even) { justify-content: flex-end; padding-left: calc(50% + 30px); }
+      /* Dot on the line */
+      .bt-item::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 24px;
+        width: 16px;
+        height: 16px;
+        background: #6d35d8;
+        border: 3px solid #0e0b1a;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        box-shadow: 0 0 16px rgba(109, 53, 216, 0.5);
+        transition: background 0.3s, box-shadow 0.3s;
+      }
+      .bt-item:hover::before {
+        background: #c9a4ff;
+        box-shadow: 0 0 24px rgba(109, 53, 216, 0.8);
+      }
+      .bt-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 22px 26px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), border-color 0.45s, box-shadow 0.45s;
+        width: 100%;
+      }
+      .bt-card:hover {
+        transform: scale(1.03);
         border-color: rgba(109, 53, 216, 0.35);
+        box-shadow: 0 16px 48px rgba(75, 26, 158, 0.25);
+      }
+      .bt-card-icon {
+        flex-shrink: 0;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: rgba(109, 53, 216, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .bt-card-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: #c9a4ff;
+        fill: none;
+        stroke-width: 2;
+      }
+      .bt-card-text h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 3px;
+      }
+      .bt-card-text p {
+        font-size: 13px;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.45;
+      }
+      /* Bottom comparison cards */
+      .bt-comparison {
+        display: flex;
+        gap: 24px;
+        max-width: 900px;
+        margin: 60px auto 0;
+      }
+      .bt-compare-card {
+        flex: 1;
+        padding: 36px 32px;
+        border-radius: 24px;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .bt-compare-card.negative {
+        background: rgba(20, 15, 40, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: background 0.3s, border-color 0.3s;
+      }
+      .bt-compare-card.negative:hover {
+        background: rgba(75, 26, 158, 0.3);
+        border-color: rgba(109, 53, 216, 0.3);
+      }
+      .bt-compare-card.positive {
+        background: linear-gradient(135deg, #4b1a9e 0%, #6d35d8 100%);
+        border: 1px solid rgba(109, 53, 216, 0.5);
+        box-shadow: 0 8px 40px rgba(75, 26, 158, 0.3);
+      }
+      .bt-compare-icon {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+      }
+      .bt-compare-icon svg { width: 32px; height: 32px; }
+      .bt-compare-card p {
+        font-size: 15px;
+        line-height: 1.55;
+        color: rgba(255,255,255,0.85);
+      }
+      .bt-compare-card.positive p { color: #fff; }
+      .bonus-timeline-image {
+        text-align: center;
+        margin-top: 60px;
+      }
+      .bonus-timeline-image img {
+        max-width: 500px;
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 24px 60px rgba(75, 26, 158, 0.25);
+        border: 1px solid rgba(109, 53, 216, 0.15);
+      }
+      @media (max-width: 768px) {
+        .bonus-timeline-section { padding: 60px 16px; }
+        .bonus-timeline-header h2 { font-size: 24px; }
+        .bonus-timeline-wrapper::before { left: 20px; }
+        .bt-item:nth-child(odd),
+        .bt-item:nth-child(even) {
+          justify-content: flex-start;
+          padding-left: 50px;
+          padding-right: 0;
+        }
+        .bt-item::before { left: 20px; }
+        .bt-card { padding: 18px 20px; }
+        .bt-card-text h4 { font-size: 14px; }
+        .bt-card-text p { font-size: 12px; }
+        .bt-comparison { flex-direction: column; gap: 16px; }
+        .bt-compare-card { padding: 24px 20px; border-radius: 18px; }
+        .bt-compare-card p { font-size: 13px; }
+        .bonus-timeline-image img { max-width: 100%; }
       }
 
       /* ==========================================================================
@@ -1834,11 +2406,14 @@
             id="mainVideo"
             class="video-frame" 
             src="./video/Jonas-video.mp4" 
-            poster="./images/image.png"
+            poster="./images/image.webp"
+            preload="none"
+            width="848"
+            height="480"
             playsinline 
             webkit-playsinline
           ></video>
-          <div class="video-overlay" id="videoOverlay">
+          <div class="video-overlay" id="videoOverlay" role="button" tabindex="0" aria-label="Assistir ao vídeo do curso">
             <div class="play-button-custom">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z"/>
@@ -1856,9 +2431,18 @@
 
       <div class="reviews reveal reveal-delay-5">
         <div class="avatar-group">
-          <img class="avatar" src="./images/people/1.png" />
-          <img class="avatar" src="./images/people/2.png" />
-          <img class="avatar" src="./images/people/3.png" />
+          <picture>
+            <source srcset="./images/people/1.webp" type="image/webp" />
+            <img class="avatar" src="./images/people/1.png" alt="" width="30" height="30" decoding="async" />
+          </picture>
+          <picture>
+            <source srcset="./images/people/2.webp" type="image/webp" />
+            <img class="avatar" src="./images/people/2.png" alt="" width="30" height="30" decoding="async" />
+          </picture>
+          <picture>
+            <source srcset="./images/people/3.webp" type="image/webp" />
+            <img class="avatar" src="./images/people/3.png" alt="" width="30" height="30" decoding="async" />
+          </picture>
         </div>
         <div class="review-text">Centenas de alunos transformados (5.0/5)</div>
       </div>
@@ -2115,43 +2699,23 @@
 
     <!-- Sales Copy Section -->
     <div class="sales-copy">
-      <h2 class="sales-copy-title reveal">
-        Chega de copiar cortes sem entender o porquê.
-      </h2>
+      <div class="sales-copy-content">
+        <h2 class="sales-copy-title reveal">
+          Chega de copiar cortes sem entender o porquê.
+        </h2>
 
-      <p class="reveal reveal-delay-1">
-        Você já passou horas tentando acertar aquele corte perfeito, lutando com marcas no degradê ou clientes insatisfeitos porque o cabelo simplesmente não cooperava? Seu esforço é valioso demais para continuar estagnado.
-      </p>
+        <p class="reveal reveal-delay-1">
+          Se você depende de tutorial decorado, qualquer cabelo diferente vira insegurança. O Barber Start te mostra a base por trás do corte: peso, direção do fio, encaixe e acabamento.
+        </p>
 
-      <p>
-        Durante anos, a maioria dos barbeiros ficou presa a cursos que apenas ensinam <span class="highlight">receitas prontas</span> de "como fazer um corte isolado". O problema é que, quando entra um cliente com um formato de cabeça ou tipo de cabelo diferente, <span class="highlight">tudo dá errado</span>.
-      </p>
+        <p class="reveal reveal-delay-2">
+          Em vez de repetir receitas prontas, você aprende a pensar como barbeiro profissional e adaptar a técnica para cada cliente.
+        </p>
 
-      <p>Agora, a forma de aprender evoluiu.</p>
-
-      <p>
-        Sua habilidade pode ganhar destaque profissional <span class="emphasis">em questão de semanas</span>. Com o treinamento focado nos fundamentos, você elimina a tentativa e erro e os vícios de iniciante. Chega de se perder tentando tutoriais confusos da internet.
-      </p>
-
-      <p>O verdadeiro segredo não está na tesoura, está no conhecimento.</p>
-
-      <p>
-        A maioria aprende a fazer o degradê, mas não entende o controle de peso, a direção do fio ou como realizar um encaixe sem criar degraus absurdos. Nós decidimos mudar isso e abrir a caixa-preta da barbearia profissional.
-      </p>
-
-      <p>Até agora.</p>
-
-      <p>
-        Apresentamos o curso com o <span class="highlight">método Barber Start</span>, cuidadosamente desenvolvido para quem precisa aprender do zero ou aperfeiçoar sua base, testado em situações reais e focado no porquê de cada técnica.
-      </p>
-
-      <p>
-        Este conteúdo direto ao ponto fornece tudo que você precisa para dominar qualquer perfil de cliente, dando a você a liberdade e a confiança para focar no que realmente importa: <span class="emphasis">entregar resultados e lucrar mais</span>.
-      </p>
-
-      <p>
-        E o melhor? Você não vai pagar os R$ 1.800,00 que esse conteúdo realmente vale. Por apenas R$189,90, você tem acesso a <span class="highlight">todo o curso e bônus vitais</span> - o equivalente a menos de um corte por mês.
-      </p>
+        <p class="reveal reveal-delay-3">
+          O resultado é simples: mais confiança, menos tentativa e erro e cortes que fazem sentido do começo ao fim.
+        </p>
+      </div>
     </div>
 
     <!-- Features Section -->
@@ -2295,7 +2859,11 @@
     <!-- Social Proof — Glassmorphism Marquee -->
     <section class="social-proof-section" id="socialProofSection">
       <div class="social-proof-header">
-        <span class="social-proof-badge reveal">Provas Sociais</span>
+        <div class="section-kicker reveal">
+          <span class="section-kicker-line section-kicker-line-left"></span>
+          <span class="section-kicker-text">Provas Sociais</span>
+          <span class="section-kicker-line section-kicker-line-right"></span>
+        </div>
         <h2 class="reveal reveal-delay-1">A base que já transformou centenas de profissionais</h2>
         <p class="reveal reveal-delay-2">Pessoas reais que deram um salto em suas carreiras através da compreensão real dos fundamentos do cabelo.</p>
       </div>
@@ -2307,11 +2875,174 @@
       </div>
     </section>
 
+    <!-- Platform Showcase Section (inspired by section6) -->
+    <section class="platform-showcase" id="platformShowcase">
+      <div class="platform-showcase-image" aria-hidden="true">
+        <picture>
+          <source srcset="images/IMAGEM-NOTEBOOK.webp" type="image/webp" />
+          <img src="images/IMAGEM-NOTEBOOK.jpeg" alt="" width="2752" height="1536" loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <div class="platform-showcase-content">
+        <div class="platform-showcase-cards">
+          <div class="ps-header reveal">
+            <div class="section-kicker">
+              <span class="section-kicker-line section-kicker-line-left"></span>
+              <span class="section-kicker-text">O QUE VOCÊ RECEBE</span>
+              <span class="section-kicker-line section-kicker-line-right"></span>
+            </div>
+            <h3 class="ps-title">Tudo que está incluso no Barber Start</h3>
+          </div>
+
+          <div class="ps-card reveal reveal-delay-1">
+            <div class="ps-card-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="ps-card-text">
+              <h4>Curso Completo Online</h4>
+              <p>Acesso a todas as aulas gravadas do Barber Start, do iniciante ao avançado — assista no seu ritmo.</p>
+            </div>
+          </div>
+
+          <div class="ps-card reveal reveal-delay-2">
+            <div class="ps-card-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="ps-card-text">
+              <h4>Guia PDF de Produtos</h4>
+              <p>PDF exclusivo com os melhores produtos do mercado para você montar sua maleta profissional.</p>
+            </div>
+          </div>
+
+          <div class="ps-card reveal reveal-delay-3">
+            <div class="ps-card-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="ps-card-text">
+              <h4>Comunidade Exclusiva</h4>
+              <p>Grupo privado para trocar experiências, tirar dúvidas e fazer networking com outros barbeiros.</p>
+            </div>
+          </div>
+
+          <div class="ps-card reveal reveal-delay-4">
+            <div class="ps-card-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="ps-card-text">
+              <h4>Suporte VIP</h4>
+              <p>Suporte direto para tirar dúvidas sobre técnicas, aulas e conteúdo do curso.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bonus Timeline Section (inspired by section14) -->
+    <section class="bonus-timeline-section" id="bonusTimeline">
+      <div class="bonus-timeline-header">
+        <div class="section-kicker reveal">
+          <span class="section-kicker-line section-kicker-line-left"></span>
+          <span class="section-kicker-text">BÔNUS EXCLUSIVOS</span>
+          <span class="section-kicker-line section-kicker-line-right"></span>
+        </div>
+        <h2 class="reveal reveal-delay-1">Veja tudo que você leva de bônus</h2>
+      </div>
+
+      <div class="bonus-timeline-wrapper">
+        <!-- Item 1 -->
+        <div class="bt-item reveal reveal-delay-1">
+          <div class="bt-card">
+            <div class="bt-card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="bt-card-text">
+              <h4>Acesso vitalício</h4>
+              <p>Acesso por tempo ilimitado ao curso completo e todas as futuras atualizações.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="bt-item reveal reveal-delay-2">
+          <div class="bt-card">
+            <div class="bt-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div class="bt-card-text">
+              <h4>Comunidade de barbeiros</h4>
+              <p>Acesso ao grupo exclusivo para trocar experiências e construir network no mercado.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="bt-item reveal reveal-delay-3">
+          <div class="bt-card">
+            <div class="bt-card-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="bt-card-text">
+              <h4>Aulas práticas em vídeo</h4>
+              <p>Demonstrações reais de técnicas de corte, degradê e visagismo aplicadas na cadeira.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="bt-item reveal reveal-delay-4">
+          <div class="bt-card">
+            <div class="bt-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="bt-card-text">
+              <h4>Guia exclusivo em PDF</h4>
+              <p>Lista completa dos melhores produtos profissionais para montar sua maleta ideal.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="bt-item reveal reveal-delay-5">
+          <div class="bt-card">
+            <div class="bt-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="bt-card-text">
+              <h4>Garantia incondicional de 7 dias</h4>
+              <p>Se não gostar, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison cards -->
+      <div class="bt-comparison">
+        <div class="bt-compare-card negative reveal">
+          <div class="bt-compare-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <p>Barbeiros que tentam aprender sozinhos perdem meses com técnicas erradas, gastam dinheiro em produtos ruins e demoram anos para conseguir clientes fiéis.</p>
+        </div>
+        <div class="bt-compare-card positive reveal reveal-delay-1">
+          <div class="bt-compare-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
+          </div>
+          <p>Alunos do Barber Start dominam os fundamentos desde o início, escolhem os produtos certos e constroem uma carteira de clientes sólida em semanas.</p>
+        </div>
+      </div>
+
+      <!-- Image -->
+    </section>
+
     <!-- Pricing Section -->
     <div class="pricing-section">
       <div class="pricing-container">
         <div class="pricing-header">
-          <span class="pricing-subtitle reveal">OFERTA EXCLUSIVA</span>
+          <div class="section-kicker reveal">
+            <span class="section-kicker-line section-kicker-line-left"></span>
+            <span class="section-kicker-text">OFERTA EXCLUSIVA</span>
+            <span class="section-kicker-line section-kicker-line-right"></span>
+          </div>
           <h2 class="pricing-title reveal reveal-delay-1">Invista na sua evolução profissional</h2>
           <p class="pricing-description reveal reveal-delay-2">
             Evite erros na cadeira da barbearia. Tenha a base completa e os atalhos reais do mercado por um preço incomparável
@@ -2479,13 +3210,22 @@
         <div class="pricing-reviews">
           <div class="pricing-avatar-group">
             <div class="pricing-avatar">
-              <img src="./images/people/1.png" alt="Avatar 1" />
+              <picture>
+                <source srcset="./images/people/1.webp" type="image/webp" />
+                <img src="./images/people/1.png" alt="" width="30" height="30" loading="lazy" decoding="async" />
+              </picture>
             </div>
             <div class="pricing-avatar">
-              <img src="./images/people/2.png" alt="Avatar 2" />
+              <picture>
+                <source srcset="./images/people/2.webp" type="image/webp" />
+                <img src="./images/people/2.png" alt="" width="30" height="30" loading="lazy" decoding="async" />
+              </picture>
             </div>
             <div class="pricing-avatar">
-              <img src="./images/people/3.png" alt="Avatar 3" />
+              <picture>
+                <source srcset="./images/people/3.webp" type="image/webp" />
+                <img src="./images/people/3.png" alt="" width="30" height="30" loading="lazy" decoding="async" />
+              </picture>
             </div>
           </div>
           <div class="pricing-review-text">
@@ -2510,7 +3250,7 @@
         </div>
 
         <div class="faq-list">
-          <div class="faq-item reveal reveal-delay-1" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-1" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">
                 Para quem é o daPrata Barber Start?
@@ -2524,7 +3264,7 @@
             </div>
           </div>
 
-          <div class="faq-item reveal reveal-delay-2" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-2" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">Como e quando vou receber o acesso?</h3>
               <div class="faq-icon"></div>
@@ -2536,7 +3276,7 @@
             </div>
           </div>
 
-          <div class="faq-item reveal reveal-delay-3" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-3" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">
                 Terei algum suporte se surgir dúvidas?
@@ -2550,7 +3290,7 @@
             </div>
           </div>
 
-          <div class="faq-item reveal reveal-delay-4" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-4" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">
                 Por quanto tempo tenho acesso ao curso?
@@ -2564,7 +3304,7 @@
             </div>
           </div>
 
-          <div class="faq-item reveal reveal-delay-5" onclick="toggleFaq(this)">
+          <div class="faq-item reveal reveal-delay-5" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
             <div class="faq-question">
               <h3 class="faq-question-text">
                 E se eu não gostar das aulas? Tem garantia?
@@ -2734,7 +3474,7 @@
         const stars = "★".repeat(t.rating || 5);
         card.innerHTML = `
           <div class="testimonial-profile">
-            <img src="${t.avatar}" alt="${t.name}" loading="lazy" />
+            <img src="${t.avatar}" alt="${t.name}" width="48" height="48" loading="lazy" decoding="async" />
             <div class="testimonial-profile-info">
               <h3>${t.name}</h3>
               <span>${t.role || "Cliente"}</span>
@@ -2749,19 +3489,59 @@
       function renderTestimonials() {
         const track = document.getElementById("testimonialsTrack");
         if (!track) return;
+        track.classList.remove("is-running");
         track.innerHTML = "";
-        // Duplicate to create seamless infinite loop
         const duplicated = [...testimonials, ...testimonials];
+        const fragment = document.createDocumentFragment();
         duplicated.forEach(function(t) {
-          track.appendChild(createTestimonialCard(t));
+          fragment.appendChild(createTestimonialCard(t));
+        });
+        track.appendChild(fragment);
+        restartTestimonialsMarquee(track);
+      }
+
+      function restartTestimonialsMarquee(track) {
+        if (!track || !track.children.length) return;
+        track.classList.remove("is-running");
+        track.style.animation = "none";
+        void track.offsetWidth;
+        track.style.animation = "";
+        requestAnimationFrame(function() {
+          track.classList.add("is-running");
         });
       }
 
-      renderTestimonials();
+      function bootTestimonialsMarquee() {
+        const track = document.getElementById("testimonialsTrack");
+        if (!track || !track.children.length) {
+          renderTestimonials();
+          return;
+        }
+        restartTestimonialsMarquee(track);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", renderTestimonials, { once: true });
+      } else {
+        renderTestimonials();
+      }
+
+      window.addEventListener("load", bootTestimonialsMarquee);
+      window.addEventListener("pageshow", bootTestimonialsMarquee);
+      document.addEventListener("visibilitychange", function() {
+        if (!document.hidden) bootTestimonialsMarquee();
+      });
+
+      var testimonialsResizeTimer;
+      window.addEventListener("resize", function() {
+        window.clearTimeout(testimonialsResizeTimer);
+        testimonialsResizeTimer = window.setTimeout(bootTestimonialsMarquee, 180);
+      });
 
       // Toggle FAQ
       function toggleFaq(element) {
         element.classList.toggle("active");
+        element.setAttribute("aria-expanded", element.classList.contains("active") ? "true" : "false");
       }
 
       // Video Player Custom Overlay
@@ -2771,9 +3551,18 @@
         const videoOverlay = document.getElementById('videoOverlay');
         
         if (videoWrapper && video && videoOverlay) {
-          videoOverlay.addEventListener('click', function(e) {
+          function playMainVideo() {
             if (video.paused) {
               video.play();
+            }
+          }
+
+          videoOverlay.addEventListener('click', playMainVideo);
+
+          videoOverlay.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              playMainVideo();
             }
           });
 
@@ -2794,6 +3583,15 @@
             video.load(); 
           });
         }
+
+        document.querySelectorAll('.faq-item[role="button"]').forEach(function(item) {
+          item.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleFaq(item);
+            }
+          });
+        });
       });
     </script>
   </body>
